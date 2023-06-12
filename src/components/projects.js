@@ -1,10 +1,13 @@
-import React, { Component, Fragment, useState } from "react";
+import React, { useState } from "react";
 import AvoglowLogin from "../images/Avoglow Login Page.png";
 import AvoglowHome from "../images/Avoglow Home Page.png";
 import AvoglowSymptoms from "../images/Avoglow Sympoms Page.png";
 import AvoglowCalendar from "../images/Avoglow Calendar Page.png";
 import Spotify from "../images/Spotify Top Tracks Project.png";
-
+import BlogPage from "../images/blogpost.png";
+import LoginBlog from "../images/logincomment.png";
+import CommentBlog from "../images/makingacomment.png";
+import PersonalWebsite from "../images/personal website.png";
 
 function Icon({ id, open }) {
   return (
@@ -50,15 +53,21 @@ export default function Projects() {
       images: [Spotify],
     },
     {
+      project: "Prototype of This Website",
+      description:
+        "I designed an early version of this website using HTML, CSS, and JavaScript. I also used REST APIs, Node.js, Express, and MongoDB for the backend to create a commenting feature on the blog page. By logging in with a name, users could access all the comments posted on the blog, make their own comments, and also edit their display name.",
+      images: [BlogPage, LoginBlog, CommentBlog],
+    },
+    {
       project: "This website!",
       description:
-        "I designed this website from scratch using Figma and built it using React.",
-      images: [],
+        "I designed this website from scratch using Figma and built it using React. I've attached an image of what my original Figma design looked like.",
+      images: [PersonalWebsite],
     },
     {
       project: "Building: Pokemon Gym",
       description:
-        "Still in design, but currently creating an app combining my love for Pokemon and the gym",
+        "Still in design, but currently creating an app combining my love for Pokemon and the gym.",
       images: [],
     },
   ];
@@ -94,7 +103,6 @@ export default function Projects() {
                           <img
                             key={imageIndex}
                             src={image}
-                            alt="Project Image"
                           />
                         </div>
                       ))}
