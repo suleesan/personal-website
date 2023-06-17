@@ -97,7 +97,7 @@ export default function Projects() {
                 <div className="inline-block w-full py-4 px-4 text-gray-700 text-sm font-light leading-normal">
                   <p className="text-lg">{item.description}</p>
                   {item.images && (
-                    <div className="flex flex-shrink mt-4">
+                    <div className="flex flex-col sm:flex-shrink mt-4">
                       {item.images.map((image, imageIndex) => (
                         <div className="w-full max-w-sm mx-auto mt-2 px-2">
                           <img

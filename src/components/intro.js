@@ -19,27 +19,27 @@ export default function Intro() {
         </div>
         <div className="w-full px-16 py-16 sm:py-24 lg:py-32">
           <div className="flex flex-row">
-            <div className="text-center w-3/4 mr-16">
+            <div className="w-3/4 mr-8 sm:mr-16">
               <h1 className="text-4xl font-bold tracking-tight text-primary-500 sm:text-6xl">
                 Susan Lee
               </h1>
-              <div className="text-justify">
-                <p className="mt-6 text-lg leading-8 text-gray-600">
+              <div className="sm:text-justify">
+                <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-8 text-gray-600">
                   Hi! I'm Susan, a rising junior at Stanford studying Computer
                   Science and Psychology. I'm interested in front-end development
                   and am eager to learn more about web design. I'm also fascinated
                   about the human mind and am interested in understanding and
                   helping people through psychology and cognitive science.
                 </p>
-                <p className="mt-6 text-lg leading-8 text-gray-600">
+                <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-8 text-gray-600">
                   In my free time, I enjoy playing the violin and piano, playing
                   Pokemon, watching the latest Netflix shows, trying new food,
                   photography, and reading.
                 </p>
               </div>
             </div>
-            <div className="w-1/4 -mt-12">
-              <img src={headshot} className="rounded-lg"/>
+            <div className="sm:w-1/4 w-1/2 sm:-mt-12">
+              <img src={headshot} className="rounded-lg mx-auto w-48 sm:w-full" alt="Headshot"/>
             </div>
           </div>
         </div>
