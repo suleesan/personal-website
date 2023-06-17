@@ -4,7 +4,7 @@ import headshot from "../images/Susan Lee Headshot.png";
 export default function Intro() {
   return (
     <div className="bg-white">
-      <div className="relative isolate px-6 pt-14 lg:px-8">
+      <div className="relative isolate px-2 sm:px-6 pt-14 lg:px-8">
         <div
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
           aria-hidden="true"
@@ -17,7 +17,7 @@ export default function Intro() {
             }}
           />
         </div>
-        <div className="w-full px-16 py-16 sm:py-24 lg:py-32">
+        <div className="w-full px-8 sm:px-16 py-16 sm:py-24 lg:py-32">
           <div className="flex flex-row">
             <div className="w-3/4 mr-8 sm:mr-16">
               <h1 className="text-4xl font-bold tracking-tight text-primary-500 sm:text-6xl">

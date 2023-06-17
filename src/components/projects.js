@@ -75,7 +75,7 @@ export default function Projects() {
   return (
     <div className="flex flex-col mt-16 mx-24">
       <div className="mx-auto max-w-2xl lg:mx-0 mb-10">
-        <h2 className="text-5xl font-bold tracking-tight text-primary-500 sm:text-5xl">
+        <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-primary-500">
           Projects
         </h2>
       </div>
@@ -87,7 +87,7 @@ export default function Projects() {
               className="flex justify-between items-center w-full py-4 border-b border-b-blue-gray-100 text-xl text-left font-semibold leading-snug select-none hover:text-blue-gray-900 transition-colors"
               onClick={() => handleOpen(index)}
             >
-              <h2 className="flex flex-row justify-between text-2xl font-bold">
+              <h2 className="flex flex-row justify-between text-xl sm:text-2xl font-bold">
                 {item.project}
               </h2>
               <Icon id={index} open={openIndexes.includes(index)} />
