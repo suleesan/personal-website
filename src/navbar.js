@@ -14,7 +14,7 @@ function Navbar() {
           </div>
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-x divide-gray-500/10">
-              <div className="flex flex-row">
+              <div className="flex flex-row px-1.5">
                 <Link to="/" 
                   className="sm:mx-3 block rounded-lg px-2 py-1.5 text-base font-semibold leading-7 text-primary-500 hover:bg-gray-100"
                 >Home

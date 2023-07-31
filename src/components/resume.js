@@ -38,7 +38,7 @@ export default class Resume extends Component {
                 <ul className="mt-2">
                   <li className="py-4">
                     <p className="flex flex-col sm:flex-row sm:justify-between"><strong className="font-bold text-lg">General Atomics</strong>June 2023 - Present</p>
-                    <p className="flex flex-col sm:flex-row sm:justify-between italic">Incoming Software Engineering Intern<small className="not-italic">San Diego, CA</small></p>
+                    <p className="flex flex-col sm:flex-row sm:justify-between italic">Software Engineering Intern<small className="not-italic">San Diego, CA</small></p>
                   </li>
                   <li className="py-4">
                     <p className="flex flex-col sm:flex-row sm:justify-between"><strong className="font-bold text-lg">Stanford Music Library</strong>February 2022 - Present</p>

@@ -59,10 +59,23 @@ export default function Projects() {
       images: [BlogPage, LoginBlog, CommentBlog],
     },
     {
-      project: "This website!",
+      project: "This Website!",
       description:
-        "I designed this website from scratch using Figma and built it using React. I've attached an image of what my original Figma design looked like.",
+        "I designed this website from scratch using Figma and built it using React. I'm using GraphCMS (Hygraph) for the blog. I've attached an image of what my original Figma design looked like.",
       images: [PersonalWebsite],
+    },
+    {
+      project: "Wordle",
+      link: "https://wordle-two-khaki.vercel.app/",
+      description:
+        "Click the title to try it out! Feeling too impatient to wait every day for a new Wordle, I decided to build my own using React. Simply refresh for a new word! This project taught me a lot about the fundamentals of React. Future improvements: Hard Mode, Light/Dark Mode, and more words.",
+      images: [],
+    },
+    {
+      project: "Building: Shopping Scraper",
+      description:
+        "Still in design, but currently creating a website using React and Flask to scrape my favorite shopping websites for sales and display them all in one place.",
+      images: [],
     },
     {
       project: "Building: Pokemon Gym",
@@ -73,7 +86,7 @@ export default function Projects() {
   ];
 
   return (
-    <div className="flex flex-col mt-16 mx-24">
+    <div className="flex flex-col mt-16 mx-6 sm:mx-24">
       <div className="mx-auto max-w-2xl lg:mx-0 mb-10">
         <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-primary-500">
           Projects
@@ -87,8 +100,12 @@ export default function Projects() {
               className="flex justify-between items-center w-full py-4 border-b border-b-blue-gray-100 text-xl text-left font-semibold leading-snug select-none hover:text-blue-gray-900 transition-colors"
               onClick={() => handleOpen(index)}
             >
-              <h2 className="flex flex-row justify-between text-xl sm:text-2xl font-bold">
-                {item.project}
+              <h2 className={`flex flex-row justify-between text-xl sm:text-2xl font-bold ${item.link ? 'hover:text-primary-500' : ''}`}>
+                {item.link ? (
+                  <a href={item.link} target="_blank" rel="noopener noreferrer">{item.project}</a>
+                ) : (
+                  item.project
+                )}
               </h2>
               <Icon id={index} open={openIndexes.includes(index)} />
             </button>
@@ -97,12 +114,13 @@ export default function Projects() {
                 <div className="inline-block w-full py-4 px-4 text-gray-700 text-sm font-light leading-normal">
                   <p className="text-lg">{item.description}</p>
                   {item.images && (
-                    <div className="flex flex-col sm:flex-shrink mt-4">
+                    <div className="flex flex-col sm:flex-row sm:flex-shrink mt-4">
                       {item.images.map((image, imageIndex) => (
                         <div className="w-full max-w-sm mx-auto mt-2 px-2">
                           <img
                             key={imageIndex}
                             src={image}
+                            alt="project images"
                           />
                         </div>
                       ))}

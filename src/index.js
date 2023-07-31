@@ -9,6 +9,7 @@ import Intro from "./components/intro";
 import Projects from "./components/projects";
 import Resume from "./components/resume";
 import Blog from './components/blog';
+import PostDetails from './components/blogpost/postpage';
 
 export default function App() {
   return (
@@ -18,7 +19,8 @@ export default function App() {
           <Route index element={<Intro />} />
           <Route path="projects" element={<Projects />} />
           <Route path="resume" element={<Resume />} />
-          <Route path="blog" element={<Blog />} />
+          <Route path="blog" element={<Blog/>} />
+          <Route path="post/:slug" element={<PostDetails/>} />
         </Route>
       </Routes>
     </BrowserRouter>
