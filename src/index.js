@@ -10,20 +10,23 @@ import Projects from "./components/projects";
 import Resume from "./components/resume";
 import Blog from './components/blog';
 import PostDetails from './components/blogpost/postpage';
+import { PostProvider } from './components/blogcomponents/postcontext';
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Intro />} />
-          <Route path="projects" element={<Projects />} />
-          <Route path="resume" element={<Resume />} />
-          <Route path="blog" element={<Blog/>} />
-          <Route path="post/:slug" element={<PostDetails/>} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <PostProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Intro />} />
+            <Route path="projects" element={<Projects />} />
+            <Route path="resume" element={<Resume />} />
+            <Route path="blog" element={<Blog/>} />
+            <Route path="post/:slug" element={<PostDetails/>} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </PostProvider>
   );
 }
 

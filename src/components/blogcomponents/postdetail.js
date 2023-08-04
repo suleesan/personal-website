@@ -59,7 +59,7 @@ const PostDetail = ({ post }) => {
   // };
 
   return (
-    <p>hello</p>
+    <p>Please check back later!</p>
     // <div className="flex flex-col mt-16 mx-6 sm:mx-24">
     //   <div className="mx-auto max-w-2xl lg:mx-0 mb-10">
     //     <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-primary-500">

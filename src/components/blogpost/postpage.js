@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getPostDetails, getPosts } from '../../services';
 import PostDetail from '../blogcomponents/postdetail';
+import { usePostContext } from '../blogcomponents/postcontext';
 
 const PostDetails = () => {
   const { slug } = useParams();
+  // const [posts, setPosts] = usePostContext();
   const [post, setPost] = useState(null);
   const [paths, setPaths] = useState([]);
 

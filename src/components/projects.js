@@ -61,7 +61,7 @@ export default function Projects() {
     {
       project: "This Website!",
       description:
-        "I designed this website from scratch using Figma and built it using React. I'm using GraphCMS (Hygraph) for the blog. I've attached an image of what my original Figma design looked like.",
+        "I designed this website from scratch using Figma and built it using React and styled it with Tailwind. I'm using GraphCMS (Hygraph) for the blog. I've attached an image of what my original Figma design looked like.",
       images: [PersonalWebsite],
     },
     {
@@ -92,7 +92,7 @@ export default function Projects() {
           Projects
         </h2>
       </div>
-      <div id="accordion" className="mx-8">
+      <div id="accordion" className="sm:mx-8">
         {accordionData.map((item, index) => (
           <div key={index} className="block relative w-full">
             <button
