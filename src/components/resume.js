@@ -90,9 +90,9 @@ export default class Resume extends Component {
                     <ul className="ml-4 py-2">
                       Taught a group of ~10 students various programming topics
                       in Python such as lists, dictionaries, and graphics
-                      through interactive activities; taught programming logic
-                      and debugging strategies and answered questions on student
-                      forum.
+                      through interactive activities; guided students on
+                      programming logic and debugging strategies and maintained
+                      student forum.
                     </ul>
                   </li>
                   <li className="py-4">
