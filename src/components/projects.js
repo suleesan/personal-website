@@ -59,7 +59,7 @@ export default function Projects() {
       images: [BlogPage, LoginBlog, CommentBlog],
     },
     {
-      project: "This Website!",
+      project: "This Website",
       description:
         "I designed this website from scratch using Figma and built it using React and styled it with Tailwind. I'm using GraphCMS (Hygraph) for the blog. I've attached an image of what my original Figma design looked like.",
       images: [PersonalWebsite],
@@ -83,7 +83,13 @@ export default function Projects() {
         "Still in design, but currently creating an app combining my love for Pokemon and the gym.",
       images: [],
     },
-  ];
+    {
+      project: "Building: Audio File Transcriber",
+      description:
+        "Still in design and tinkering with Whisper and Stripe; check back soon!",
+      images: [],
+    }
+  ]
 
   return (
     <div className="flex flex-col mt-16 mx-6 sm:mx-24">
