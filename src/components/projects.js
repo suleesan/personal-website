@@ -68,7 +68,7 @@ export default function Projects() {
       project: "Wordle",
       link: "https://wordle-two-khaki.vercel.app/",
       description:
-        "Click the title to try it out! Feeling too impatient to wait every day for a new Wordle, I decided to build my own using React. Simply refresh for a new word! This project taught me a lot about the fundamentals of React. Future improvements: Hard Mode, Light/Dark Mode, and more words.",
+        "Click the title to try it out! Feeling too impatient to wait every day for a new Wordle, I decided to build my own using React. Features unlimited plays, light/dark mode, and valid guesses and answers according to the actual NYT Wordle. Future improvements: Hard Mode.",
       images: [],
     },
     {
