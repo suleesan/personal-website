@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { PostCard, Categories } from "./blogcomponents";
 import { getPosts } from "../services/index";
-// import { usePostContext } from "./blogcomponents/postcontext";
 
 export default function Blog() {
-  // const [posts, setPosts] = usePostContext();
-  // console.log(posts)
 
   const [posts, setPosts] = useState([])
 
