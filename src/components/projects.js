@@ -82,12 +82,6 @@ export default function Projects() {
       description:
         "Still in design, but currently creating an app combining my love for Pokemon and the gym.",
       images: [],
-    },
-    {
-      project: "Building: Audio File Transcriber",
-      description:
-        "Still in design and tinkering with Whisper and Stripe; check back soon!",
-      images: [],
     }
   ]
 
