@@ -8,6 +8,8 @@ import BlogPage from "../images/blogpost.png";
 import LoginBlog from "../images/logincomment.png";
 import CommentBlog from "../images/makingacomment.png";
 import PersonalWebsite from "../images/personal website.png";
+import WordleLight from "../images/Wordle Light.png"
+import WordleDark from "../images/Wordle Dark.png"
 
 function Icon({ id, open }) {
   return (
@@ -69,7 +71,7 @@ export default function Projects() {
       link: "https://wordle-two-khaki.vercel.app/",
       description:
         "Click the title to try it out! Feeling too impatient to wait every day for a new Wordle, I decided to build my own using React. Features unlimited plays, light/dark mode, and valid guesses and answers according to the actual NYT Wordle. Future improvements: Hard Mode.",
-      images: [],
+      images: [WordleDark, WordleLight],
     },
     {
       project: "Building: Shopping Scraper",
@@ -102,7 +104,7 @@ export default function Projects() {
             >
               <h2 className={`flex flex-row justify-between text-xl sm:text-2xl font-bold ${item.link ? 'hover:text-primary-500' : ''}`}>
                 {item.link ? (
-                  <a href={item.link} target="_blank" rel="noopener noreferrer">{item.project}</a>
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="rounded-lg hover:px-2 hover:py-1.5 hover:bg-gray-100">{item.project}</a>
                 ) : (
                   item.project
                 )}
