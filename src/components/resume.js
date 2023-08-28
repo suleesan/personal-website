@@ -47,12 +47,33 @@ export default class Resume extends Component {
                       <strong className="font-bold text-lg">
                         General Atomics
                       </strong>
-                      June 2023 - Present
+                      June 2023 - August 2023
                     </p>
                     <p className="flex flex-col sm:flex-row sm:justify-between italic">
                       Software Engineering Intern
                       <small className="not-italic">San Diego, CA</small>
                     </p>
+                  </li>
+                  <li className="py-4">
+                    <p className="flex flex-col sm:flex-row sm:justify-between">
+                      <strong className="font-bold text-lg">
+                        Stanford Code in Place
+                      </strong>
+                      April 2023 - Present
+                    </p>
+                    <p className="italic">Section Leader</p>
+                    <ul className="ml-4 py-2">
+                      Led weekly discussion sections for Code in Place,
+                      Stanford’s free coding course based on CS 106A, Stanford’s
+                      introductory computer science course.
+                    </ul>
+                    <ul className="ml-4 py-2">
+                      Taught a group of ~10 students various programming topics
+                      in Python such as lists, dictionaries, and graphics
+                      through interactive activities; guided students on
+                      programming logic and debugging strategies and maintained
+                      student forum.
+                    </ul>
                   </li>
                   <li className="py-4">
                     <p className="flex flex-col sm:flex-row sm:justify-between">
@@ -72,27 +93,6 @@ export default class Resume extends Component {
                       oratorio premieres, researching and adding over 200 recent
                       premieres, and updating existing entries with new
                       information. 
-                    </ul>
-                  </li>
-                  <li className="py-4">
-                    <p className="flex flex-col sm:flex-row sm:justify-between">
-                      <strong className="font-bold text-lg">
-                        Stanford Code in Place
-                      </strong>
-                      April 2023 - May 2023
-                    </p>
-                    <p className="italic">Section Leader</p>
-                    <ul className="ml-4 py-2">
-                      Led weekly discussion sections for Code in Place,
-                      Stanford’s free coding course based on CS 106A, Stanford’s
-                      introductory computer science course.
-                    </ul>
-                    <ul className="ml-4 py-2">
-                      Taught a group of ~10 students various programming topics
-                      in Python such as lists, dictionaries, and graphics
-                      through interactive activities; guided students on
-                      programming logic and debugging strategies and maintained
-                      student forum.
                     </ul>
                   </li>
                   <li className="py-4">
