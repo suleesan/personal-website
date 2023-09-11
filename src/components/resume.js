@@ -184,6 +184,30 @@ export default class Resume extends Component {
               </section>
               <section>
                 <h2 className="text-xl sm:text-2xl mt-6 pb-1 border-b font-semibold">
+                  Awards
+                </h2>
+                <ul className="mt-2">
+                  <li className="pt-2">
+                    <p className="flex flex-col sm:flex-row sm:justify-between text-sm">
+                      <strong className="text-base">
+                        National Merit Scholar
+                      </strong>
+                      2021
+                    </p>
+                  </li>
+                  <li className="pt-2">
+                    <p className="flex flex-col sm:flex-row sm:justify-between text-sm">
+                      <strong className="text-base">
+                        National Youth Orchestra 2 Violinist
+                      </strong>
+                      2018
+                    </p>
+                    <p>Part of Carnegie Hall's National Youth Ensembles</p>
+                  </li>
+                </ul>
+              </section>
+              <section>
+                <h2 className="text-xl sm:text-2xl mt-6 pb-1 border-b font-semibold">
                   Interests
                 </h2>
                 <p>

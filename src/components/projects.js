@@ -10,6 +10,7 @@ import CommentBlog from "../images/makingacomment.png";
 import PersonalWebsite from "../images/personal website.png";
 import WordleLight from "../images/Wordle Light.png"
 import WordleDark from "../images/Wordle Dark.png"
+import Pokedex from "../images/PokedexProject.png"
 
 function Icon({ id, open }) {
   return (
@@ -68,22 +69,17 @@ export default function Projects() {
     },
     {
       project: "Wordle",
-      link: "https://wordle-two-khaki.vercel.app/",
+      link: ["https://wordle-two-khaki.vercel.app/", "https://github.com/suleesan/wordle"],
       description:
         "Click the title to try it out! Feeling too impatient to wait every day for a new Wordle, I decided to build my own using React. Features unlimited plays, light/dark mode, and valid guesses and answers according to the actual NYT Wordle. Future improvements: Hard Mode.",
       images: [WordleDark, WordleLight],
     },
     {
-      project: "Building: Shopping Scraper",
+      project: "Pokedex",
+      link: ["https://pokedex-one-cyan.vercel.app/", "https://github.com/suleesan/pokedex"],
       description:
-        "Still in design, but currently creating a website using React and Flask to scrape my favorite shopping websites for sales and display them all in one place.",
-      images: [],
-    },
-    {
-      project: "Building: Pokemon Gym",
-      description:
-        "Still in design, but currently creating an app combining my love for Pokemon and the gym.",
-      images: [],
+        "Click the title to play with my Pokedex! I'm currently cooking a different project up that involves Pokemon, but while I was playing around with the PokeAPI, I thought I'd build a super quick Pokedex. It features all the Pokemon from Generations I to IV and has a search feature. Enjoy!",
+      images: [Pokedex],
     }
   ]
 
@@ -104,7 +100,7 @@ export default function Projects() {
             >
               <h2 className={`flex flex-row justify-between text-xl sm:text-2xl font-bold ${item.link ? 'hover:text-primary-500' : ''}`}>
                 {item.link ? (
-                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="rounded-lg hover:px-2 hover:py-1.5 hover:bg-gray-100">{item.project}</a>
+                  <a href={item.link[0]} target="_blank" rel="noopener noreferrer" className="rounded-lg hover:px-2 hover:py-1.5 hover:bg-gray-100">{item.project}</a>
                 ) : (
                   item.project
                 )}
@@ -115,6 +111,11 @@ export default function Projects() {
               <div className="overflow-hidden">
                 <div className="inline-block w-full py-4 px-4 text-gray-700 text-sm font-light leading-normal">
                   <p className="text-lg">{item.description}</p>
+                  {item.link && (
+                    <p className="mt-2 text-lg">
+                      For the code, click <a href={item.link[1]} target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:bg-gray-100 hover:px-1 rounded-lg">here</a>.
+                    </p>
+                  )}
                   {item.images && (
                     <div className="flex flex-col sm:flex-row sm:flex-shrink mt-4">
                       {item.images.map((image, imageIndex) => (
