@@ -78,7 +78,7 @@ export default function Projects() {
       project: "Pokedex",
       link: ["https://pokedex-one-cyan.vercel.app/", "https://github.com/suleesan/pokedex"],
       description:
-        "Click the title to play with my Pokedex! I'm currently cooking a different project up that involves Pokemon, but while I was playing around with the PokeAPI, I thought I'd build a super quick Pokedex. It features all the Pokemon from Generations I to IV and has a search feature. Enjoy!",
+        "Click the title to play with my Pokedex! I'm currently cooking up a different project up that involves Pokemon, but while I was playing around with the PokeAPI, I thought I'd build a super quick Pokedex with React. It features all the Pokemon from Generations I to IV and has a search feature. Enjoy!",
       images: [Pokedex],
     }
   ]
