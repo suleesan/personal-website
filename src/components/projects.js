@@ -78,7 +78,7 @@ export default function Projects() {
       project: "Pokedex",
       link: ["https://pokedex-one-cyan.vercel.app/", "https://github.com/suleesan/pokedex"],
       description:
-        "Click the title to play with my Pokedex! I'm currently cooking up a different project up that involves Pokemon, but while I was playing around with the PokeAPI, I thought I'd build a super quick Pokedex with React. It features all the Pokemon from Generations I to IV and has a search feature. Enjoy!",
+        "Click the title to play with my Pokedex! I'm currently cooking up a different project up that involves Pokemon, but while I was playing around with the PokeAPI, I thought I'd build a super quick Pokedex with React. It features all the Pokemon from Generations I to IV and has a search feature. I also used Redux and local storage to archive data and reduce load time. Enjoy!",
       images: [Pokedex],
     }
   ]
@@ -100,7 +100,7 @@ export default function Projects() {
             >
               <h2 className={`flex flex-row justify-between text-xl sm:text-2xl font-bold ${item.link ? 'hover:text-primary-500' : ''}`}>
                 {item.link ? (
-                  <a href={item.link[0]} target="_blank" rel="noopener noreferrer" className="rounded-lg hover:px-2 hover:py-1.5 hover:bg-gray-100">{item.project}</a>
+                  <a href={item.link[0]} target="_blank" rel="noopener noreferrer" className="text-primary-500 rounded-lg hover:px-2 hover:py-1.5 hover:bg-gray-100">{item.project}</a>
                 ) : (
                   item.project
                 )}
