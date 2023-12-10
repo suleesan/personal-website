@@ -25,7 +25,7 @@ export default function Intro() {
               </h1>
               <div className="sm:text-justify">
                 <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-8 text-gray-600">
-                  Hi! I'm Susan, a rising junior at Stanford studying Computer
+                  Hi! I'm Susan, a junior at Stanford studying Computer
                   Science and Psychology. I'm interested in front-end development
                   and am eager to learn more about web design. I'm also fascinated
                   about the human mind and am interested in understanding and
@@ -34,7 +34,7 @@ export default function Intro() {
                 <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-8 text-gray-600">
                   In my free time, I enjoy playing the violin and piano, playing
                   Pokemon, watching the latest Netflix shows, trying new food,
-                  photography, and reading.
+                  film photography, and reading.
                 </p>
               </div>
             </div>

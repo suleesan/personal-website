@@ -4,9 +4,7 @@ import AvoglowHome from "../images/Avoglow Home Page.png";
 import AvoglowSymptoms from "../images/Avoglow Sympoms Page.png";
 import AvoglowCalendar from "../images/Avoglow Calendar Page.png";
 import Spotify from "../images/Spotify Top Tracks Project.png";
-import BlogPage from "../images/blogpost.png";
-import LoginBlog from "../images/logincomment.png";
-import CommentBlog from "../images/makingacomment.png";
+import Twitter from "../images/twitter clone.png"
 import PersonalWebsite from "../images/personal website.png";
 import WordleLight from "../images/Wordle Light.png"
 import WordleDark from "../images/Wordle Dark.png"
@@ -56,10 +54,10 @@ export default function Projects() {
       images: [Spotify],
     },
     {
-      project: "Prototype of This Website",
+      project: "Twitter Clone",
       description:
-        "I designed an early version of this website using HTML, CSS, and JavaScript. I also used REST APIs, Node.js, Express, and MongoDB for the backend to create a commenting feature on the blog page. By logging in with a name, users could access all the comments posted on the blog, make their own comments, and also edit their display name.",
-      images: [BlogPage, LoginBlog, CommentBlog],
+        "I created a simple Twitter clone using HTML, CSS, and JavaScript. Using Node.js and Express.js, I implemented a REST API to interact with a MongoDB database to enable users to create a profile, log in, create posts, comment on other users’ posts on their feed, and follow or unfollow other users.",
+      images: [Twitter],
     },
     {
       project: "This Website",

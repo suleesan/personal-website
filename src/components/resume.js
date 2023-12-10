@@ -32,7 +32,7 @@ export default class Resume extends Component {
                     <p>Linear Algebra and Multivariable Calculus</p>
                     <p>Probability for Computer Scientists</p>
                     <p>Cross-Platform Mobile Development (React Native)</p>
-                    <p>Design and Analysis of Algorithms</p>
+                    <p>Design and Analysis of Algorithms (Python)</p>
                     <p>Web Programming Fundamentals (HTML, CSS, JavaScript)</p>
                   </li>
                 </ul>
@@ -178,7 +178,7 @@ export default class Resume extends Component {
                   Skills
                 </h2>
                 <p>
-                  Python, C++, C, React Native, React.js, JavaScript, HTML, CSS,
+                  Python, React.js, C++, C, React Native, JavaScript, HTML, CSS, R,
                   Git, Figma, Microsoft Office
                 </p>
               </section>
