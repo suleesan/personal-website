@@ -22,59 +22,6 @@ const PostDetail = ({ post }) => {
     fetchData();
   }, [])
 
-  // const getContentFragment = (index, text, obj, type) => {
-  //   let modifiedText = text;
-  
-  //   if (obj) {
-  //     if (obj.bold) {
-  //       modifiedText = [<b key={index}>{text}</b>];
-  //     }
-  
-  //     if (obj.italic) {
-  //       modifiedText = [<em key={index}>{text}</em>];
-  //     }
-  
-  //     if (obj.underline) {
-  //       modifiedText = [<u key={index}>{text}</u>];
-  //     }
-  //   }
-  
-  //   switch (type) {
-  //     case 'heading-three':
-  //       return <h3 key={index} className="text-xl font-semibold mb-4">{modifiedText}</h3>;
-  //     case 'paragraph':
-  //       return <p key={index} className="mt-6">{modifiedText}</p>;
-  //     case 'heading-four':
-  //       return <h4 key={index} className="text-md font-semibold mb-4">{modifiedText}</h4>;
-  //     case 'numbered-list':
-  //       // For numbered lists, render the content as an ordered list (<ol>)
-  //       return (
-  //         <ol key={index} className="list-decimal ml-8 mb-8">
-  //           {obj.children.map((listItem, listItemIndex) => {
-  //             const listItemText = listItem.children[0].children[0].children[0].text;
-  //             return <li key={listItemIndex}>{listItemText}</li>;
-  //           })}
-  //         </ol>
-  //       );
-  //     case 'image':
-  //       if (obj) {
-  //         return (
-  //           <img
-  //             key={index}
-  //             alt={obj.title}
-  //             height={obj.height}
-  //             width={obj.width}
-  //             src={obj.src}
-  //           />
-  //         );
-  //       } else {
-  //         // If obj is null, return the original text without modification
-  //         return text;
-  //       } 
-  //     default:
-  //       return modifiedText;
-  //   }
-  // };
 
   const getContentFragment = (index, text, obj, type) => {
     let modifiedText = text;
@@ -142,9 +89,7 @@ const PostDetail = ({ post }) => {
       </li>
     );
   };
-  
-  // Your existing rendering logic for storedPost
-  
+    
   
   if (storedPost) {
     console.log("post: ", storedPost)
