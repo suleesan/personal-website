@@ -12,6 +12,7 @@ const PostDetail = ({ post }) => {
     try {
       const data = await getPostDetails(slug);
       setStoredPost(data)
+      console.log(data)
     } catch (error) {
       console.error('Error fetching post details', error)
     }
@@ -21,23 +22,77 @@ const PostDetail = ({ post }) => {
     fetchData();
   }, [])
 
+  // const getContentFragment = (index, text, obj, type) => {
+  //   let modifiedText = text;
+  
+  //   if (obj) {
+  //     if (obj.bold) {
+  //       modifiedText = [<b key={index}>{text}</b>];
+  //     }
+  
+  //     if (obj.italic) {
+  //       modifiedText = [<em key={index}>{text}</em>];
+  //     }
+  
+  //     if (obj.underline) {
+  //       modifiedText = [<u key={index}>{text}</u>];
+  //     }
+  //   }
+  
+  //   switch (type) {
+  //     case 'heading-three':
+  //       return <h3 key={index} className="text-xl font-semibold mb-4">{modifiedText}</h3>;
+  //     case 'paragraph':
+  //       return <p key={index} className="mt-6">{modifiedText}</p>;
+  //     case 'heading-four':
+  //       return <h4 key={index} className="text-md font-semibold mb-4">{modifiedText}</h4>;
+  //     case 'numbered-list':
+  //       // For numbered lists, render the content as an ordered list (<ol>)
+  //       return (
+  //         <ol key={index} className="list-decimal ml-8 mb-8">
+  //           {obj.children.map((listItem, listItemIndex) => {
+  //             const listItemText = listItem.children[0].children[0].children[0].text;
+  //             return <li key={listItemIndex}>{listItemText}</li>;
+  //           })}
+  //         </ol>
+  //       );
+  //     case 'image':
+  //       if (obj) {
+  //         return (
+  //           <img
+  //             key={index}
+  //             alt={obj.title}
+  //             height={obj.height}
+  //             width={obj.width}
+  //             src={obj.src}
+  //           />
+  //         );
+  //       } else {
+  //         // If obj is null, return the original text without modification
+  //         return text;
+  //       } 
+  //     default:
+  //       return modifiedText;
+  //   }
+  // };
+
   const getContentFragment = (index, text, obj, type) => {
     let modifiedText = text;
   
+    // Handle text formatting
     if (obj) {
       if (obj.bold) {
         modifiedText = [<b key={index}>{text}</b>];
       }
-  
       if (obj.italic) {
         modifiedText = [<em key={index}>{text}</em>];
       }
-  
       if (obj.underline) {
         modifiedText = [<u key={index}>{text}</u>];
       }
     }
   
+    // Handle different types
     switch (type) {
       case 'heading-three':
         return <h3 key={index} className="text-xl font-semibold mb-4">{modifiedText}</h3>;
@@ -46,12 +101,10 @@ const PostDetail = ({ post }) => {
       case 'heading-four':
         return <h4 key={index} className="text-md font-semibold mb-4">{modifiedText}</h4>;
       case 'numbered-list':
-        // For numbered lists, render the content as an ordered list (<ol>)
         return (
           <ol key={index} className="list-decimal ml-8 mb-8">
             {obj.children.map((listItem, listItemIndex) => {
-              const listItemText = listItem.children[0].children[0].children[0].text;
-              return <li key={listItemIndex}>{listItemText}</li>;
+              return renderListItems(listItemIndex, listItem);
             })}
           </ol>
         );
@@ -75,7 +128,26 @@ const PostDetail = ({ post }) => {
     }
   };
   
+  const renderListItems = (index, listItem) => {
+    // Recursive rendering for nested list-item structures
+    return (
+      <li key={index}>
+        {listItem.children.map((child, childIndex) => {
+          if (child.type === 'list-item-child') {
+            return getContentFragment(childIndex, child.children[0].text, child, child.type);
+          } else {
+            return getContentFragment(childIndex, child.text, child, child.type);
+          }
+        })}
+      </li>
+    );
+  };
+  
+  // Your existing rendering logic for storedPost
+  
+  
   if (storedPost) {
+    console.log("post: ", storedPost)
     return (
       <div className="flex flex-col mt-16 mx-6 sm:mx-24">
         <div className="mx-auto lg:mx-0 mb-10">
