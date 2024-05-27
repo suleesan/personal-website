@@ -23,6 +23,7 @@ export default class Resume extends Component {
                   <p className="font-semibold">B.S. Computer Science</p>
                   <p className="font-semibold">B.A. Psychology</p>
                   <p>2021 - 2025</p>
+                  <p className="font-semibold">M.S. Computer Science (2026)</p>
                 </ul>
                 <ul className="mt-2">
                   <li className="mr-5">
@@ -44,6 +45,50 @@ export default class Resume extends Component {
                 <ul className="mt-2">
                   <li className="py-4">
                     <p className="flex flex-col sm:flex-row sm:justify-between">
+                      <strong className="font-bold text-lg">Netflix</strong>
+                      June 2024 - September 2024
+                    </p>
+                    <p className="flex flex-col sm:flex-row sm:justify-between italic">
+                      Incoming Software Engineering Intern
+                    </p>
+                    <ul className="ml-4 py-2"></ul>
+                  </li>
+                  <li className="py-4">
+                    <p className="flex flex-col sm:flex-row sm:justify-between">
+                      <strong className="font-bold text-lg">Carta</strong>
+                      January 2024 - Present
+                    </p>
+                    <p className="flex flex-col sm:flex-row sm:justify-between italic">
+                      Frontend Engineer
+                    </p>
+                    <ul className="ml-4 py-2">
+                      Developing the newest version of Carta, Stanford’s
+                      official course search and planning platform, using React
+                      and TypeScript; creating and improving features such as
+                      searching course reviews, a student profile menu, and
+                      displaying course data.
+                    </ul>
+                  </li>
+                  <li className="py-4">
+                    <p className="flex flex-col sm:flex-row sm:justify-between">
+                      <strong className="font-bold text-lg">
+                        Develop for Good
+                      </strong>
+                      December 2023 - February 2024
+                    </p>
+                    <p className="flex flex-col sm:flex-row sm:justify-between italic">
+                      Frontend Engineer
+                    </p>
+                    <ul className="ml-4 py-2">
+                      Developed a responsive website using React, Chakra UI, and
+                      Firebase for CHANGE Arts client project, enabling users to
+                      search for arts events and for arts organization partners
+                      to create accounts, upload, and share arts events with the
+                      community.
+                    </ul>
+                  </li>
+                  <li className="py-4">
+                    <p className="flex flex-col sm:flex-row sm:justify-between">
                       <strong className="font-bold text-lg">
                         General Atomics
                       </strong>
@@ -53,13 +98,24 @@ export default class Resume extends Component {
                       Software Engineering Intern
                       <small className="not-italic">San Diego, CA</small>
                     </p>
+                    <ul className="ml-4 py-2">
+                      Designed and implemented functionality for the automated
+                      testing framework to access and interact with the MQ-9
+                      aircraft’s weapons interface for testing weapon profiles.
+                    </ul>
+                    <ul className="ml-4 py-2">
+                      Increased test coverage, reduced testing costs by 95%, and
+                      improved efficiency for the MQ-9’s weapon systems by
+                      developing automated regression tests using Python, Linux,
+                      and Squish.
+                    </ul>
                   </li>
                   <li className="py-4">
                     <p className="flex flex-col sm:flex-row sm:justify-between">
                       <strong className="font-bold text-lg">
                         Stanford Code in Place
                       </strong>
-                      April 2023 - Present
+                      April 2023 - June 2023
                     </p>
                     <p className="italic">Section Leader</p>
                     <ul className="ml-4 py-2">
@@ -75,111 +131,25 @@ export default class Resume extends Component {
                       student forum.
                     </ul>
                   </li>
-                  <li className="py-4">
-                    <p className="flex flex-col sm:flex-row sm:justify-between">
-                      <strong className="font-bold text-lg">
-                        Stanford Music Library
-                      </strong>
-                      February 2022 - Present
-                    </p>
-                    <p className="italic">Circulation and Stacks Assistant</p>
-                    <ul className="ml-4 py-2">
-                      Worked at the circulation desk assisting students and
-                      faculty with requests; discharged, checked out, and
-                      shelved books.
-                    </ul>
-                    <ul className="ml-4 py-2">
-                      Managed Opening Night!, Stanford’s database for opera and
-                      oratorio premieres, researching and adding over 200 recent
-                      premieres, and updating existing entries with new
-                      information. 
-                    </ul>
-                  </li>
-                  <li className="py-4">
-                    <p className="flex flex-col sm:flex-row sm:justify-between">
-                      <strong className="font-bold text-lg">
-                        Stanford Luo Lab
-                      </strong>
-                      March 2022 - August 2022
-                    </p>
-                    <p className="italic">
-                      Research Assistant under Zhuoran Li and Dr. Liqun Luo
-                    </p>
-                    <ul className="ml-4 py-2">
-                      Developed a novel assay to identify proteins on the cell
-                      surface that instruct neuronal connection specificity,
-                      distinguishing whether the binding of two cell-surface
-                      proteins across the cells promotes or inhibits neuronal
-                      connections in the Drosophila olfactory circuit.
-                    </ul>
-                    <ul className="ml-4 py-2">
-                      Visualized the connections between projection neurons
-                      (PNs) and two types of Kenyon cells (KCs) in the calyx
-                      throughout development using genetic techniques,
-                      immunostaining, and confocal microscopy to better
-                      understand the development of the PN-KC circuit in the
-                      calyx.
-                    </ul>
-                  </li>
                 </ul>
               </section>
               <section>
                 <h2 className="text-xl sm:text-2xl mt-6 pb-1 border-b font-semibold">
                   Student Organizations
                 </h2>
-                <ul className="mt-2">
-                  <li className="pt-2">
-                    <p className="flex flex-col sm:flex-row sm:justify-between text-sm">
-                      <strong className="text-base">
-                        Stanford Health Consulting Group
-                      </strong>
-                      March 2023 - June 2023
-                    </p>
-                    <p>Consultant</p>
-                  </li>
-                  <li className="pt-2">
-                    <p className="flex flex-col sm:flex-row sm:justify-between text-sm">
-                      <strong className="text-base">
-                        Stanford Women in Computer Science
-                      </strong>
-                      September 2022 - Present
-                    </p>
-                    <p>Outreach Team</p>
-                  </li>
-                  <li className="pt-2">
-                    <p className="flex flex-col sm:flex-row sm:justify-between text-sm">
-                      <strong className="text-base">Stanford Synapse</strong>
-                      September 2021 - Present
-                    </p>
-                    <p>VP of Outreach and Quality Improvement</p>
-                  </li>
-                  <li className="pt-2">
-                    <p className="flex flex-col sm:flex-row sm:justify-between text-sm">
-                      <strong className="text-base">
-                        Stanford Women in Design
-                      </strong>
-                      September 2021 - Present
-                    </p>
-                    <p>Design Partnerships Team</p>
-                  </li>
-                  <li className="pt-2">
-                    <p className="flex flex-col sm:flex-row sm:justify-between text-sm">
-                      <strong className="text-base">
-                        Stanford Symphony Orchestra
-                      </strong>
-                      September 2021 - March 2022
-                    </p>
-                    <p>First Violin</p>
-                  </li>
-                </ul>
+                <p>
+                  Stanford Health Consulting Group, Stanford Women in Computer
+                  Science, Stanford Women in Design, Stanford Synapse, Stanford
+                  Symphony Orchestra
+                </p>
               </section>
               <section>
                 <h2 className="text-xl sm:text-2xl mt-6 pb-1 border-b font-semibold">
                   Skills
                 </h2>
                 <p>
-                  Python, React.js, C++, C, React Native, JavaScript, HTML, CSS, R,
-                  Git, Figma, Microsoft Office
+                  Python, React.js, React Native, JavaScript, HTML, CSS, C++, C,
+                  Figma, Git, Swift, TypeScript, Linux, R
                 </p>
               </section>
               <section>

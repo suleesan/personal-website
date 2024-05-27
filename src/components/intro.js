@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import headshot from "../images/Susan Lee Headshot.png";
 
 export default function Intro() {
@@ -25,9 +25,9 @@ export default function Intro() {
               </h1>
               <div className="sm:text-justify">
                 <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-8 text-gray-600">
-                  Hi! I'm Susan, a junior at Stanford studying Computer
-                  Science and Psychology. I'm interested in front-end development
-                  and am eager to learn more about web design. I'm also fascinated
+                  Hi! I'm Susan, a junior at Stanford studying Computer Science
+                  and Psychology. I'm interested in front-end development and am
+                  eager to learn more about web design. I'm also fascinated
                   about the human mind and am interested in understanding and
                   helping people through psychology and cognitive science.
                 </p>
@@ -39,7 +39,11 @@ export default function Intro() {
               </div>
             </div>
             <div className="sm:w-1/4 w-1/2 sm:-mt-12">
-              <img src={headshot} className="rounded-lg mx-auto w-48 sm:w-full" alt="Headshot"/>
+              <img
+                src={headshot}
+                className="rounded-lg mx-auto w-48 sm:w-full"
+                alt="Headshot"
+              />
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import moment from "moment";
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const PostCard = ({ post }) => (
   <div className="flex max-w-xl flex-col items-start justify-between rounded-lg shadow-md shadow-slate-500/50 sm: p-8 hover:bg-neutral-50">
