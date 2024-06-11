@@ -21,9 +21,12 @@ export default class Resume extends Component {
                 <ul className="mt-2">
                   <p className="font-bold text-lg">Stanford University</p>
                   <p className="font-semibold">B.S. Computer Science</p>
-                  <p className="font-semibold">B.A. Psychology</p>
-                  <p>2021 - 2025</p>
-                  <p className="font-semibold">M.S. Computer Science (2026)</p>
+                  <p className="font-semibold">
+                    B.A. Psychology <p className="font-normal">(2025)</p>
+                  </p>
+                  <p className="font-semibold">
+                    M.S. Computer Science <p className="font-normal">(2026)</p>
+                  </p>
                 </ul>
                 <ul className="mt-2">
                   <li className="mr-5">
@@ -135,21 +138,21 @@ export default class Resume extends Component {
               </section>
               <section>
                 <h2 className="text-xl sm:text-2xl mt-6 pb-1 border-b font-semibold">
+                  Skills
+                </h2>
+                <p>
+                  Python, React.js, React Native, JavaScript, HTML, CSS, C++, C,
+                  Figma, Git, Swift, TypeScript, Linux, R
+                </p>
+              </section>
+              <section>
+                <h2 className="text-xl sm:text-2xl mt-6 pb-1 border-b font-semibold">
                   Student Organizations
                 </h2>
                 <p>
                   Stanford Health Consulting Group, Stanford Women in Computer
                   Science, Stanford Women in Design, Stanford Synapse, Stanford
                   Symphony Orchestra
-                </p>
-              </section>
-              <section>
-                <h2 className="text-xl sm:text-2xl mt-6 pb-1 border-b font-semibold">
-                  Skills
-                </h2>
-                <p>
-                  Python, React.js, React Native, JavaScript, HTML, CSS, C++, C,
-                  Figma, Git, Swift, TypeScript, Linux, R
                 </p>
               </section>
               <section>
