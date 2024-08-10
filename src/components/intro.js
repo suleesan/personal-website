@@ -1,5 +1,5 @@
 import React from "react";
-import headshot from "../images/Susan Lee Headshot.png";
+import headshot from "../images/Susan Lee Casual Headshot.JPEG";
 
 export default function Intro() {
   return (
