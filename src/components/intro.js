@@ -25,12 +25,13 @@ export default function Intro() {
               </h1>
               <div className="sm:text-justify">
                 <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-8 text-gray-600">
-                  Hi! I'm Susan, a rising senior at Stanford studying Computer
-                  Science and Psychology. I'm interested in front-end
-                  development and am eager to learn more about web design. I'm
-                  also fascinated about the human mind and am interested in
-                  understanding and helping people through psychology and
-                  cognitive science.
+                  Hi! I'm Susan, a senior at Stanford studying Computer Science
+                  and Psychology. I'm also pursuing my master's degree in
+                  Computer Science with a focus in Human-Computer Interaction.
+                  I'm passionate about front-end development and learning about
+                  designing user interfaces. I'm also fascinated about the human
+                  mind and am interested in understanding and helping people
+                  through psychology and cognitive science.
                 </p>
                 <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-8 text-gray-600">
                   In my free time, I enjoy playing the violin and piano,
