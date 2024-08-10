@@ -12,7 +12,7 @@ const PostDetail = ({ post }) => {
     try {
       const data = await getPostDetails(slug);
       setStoredPost(data);
-      // console.log(data)
+      // console.log(data);
     } catch (error) {
       console.error("Error fetching post details", error);
     }

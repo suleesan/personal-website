@@ -8,7 +8,7 @@ import Twitter from "../images/twitter clone.png";
 import PersonalWebsite from "../images/personal website.png";
 import WordleLight from "../images/Wordle Light.png";
 import WordleDark from "../images/Wordle Dark.png";
-import Pokedex from "../images/PokedexProject.png";
+import Pokedex from "../images/pokedex.png";
 import KindKitchen1 from "../images/KindKitchen 18.25.49.png";
 import KindKitchen2 from "../images/KindKitchen 18.25.56.png";
 import KindKitchen3 from "../images/KindKitchen 18.26.04.png";
