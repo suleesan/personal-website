@@ -52,9 +52,9 @@ export default class Resume extends Component {
                       June 2024 - September 2024
                     </p>
                     <p className="flex flex-col sm:flex-row sm:justify-between italic">
-                      Incoming Software Engineering Intern
+                      Software Engineering Intern
                     </p>
-                    <ul className="ml-4 py-2"></ul>
+                    <ul className="ml-4 py-2">UI Developer Experience Team.</ul>
                   </li>
                   <li className="py-4">
                     <p className="flex flex-col sm:flex-row sm:justify-between">

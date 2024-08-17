@@ -29,7 +29,7 @@ export default function Intro() {
                   and Psychology. I'm also pursuing my master's degree in
                   Computer Science with a focus in Human-Computer Interaction.
                   I'm passionate about front-end development and learning about
-                  designing user interfaces. I'm also fascinated about the human
+                  designing user interfaces. I'm also fascinated by the human
                   mind and am interested in understanding and helping people
                   through psychology and cognitive science.
                 </p>
