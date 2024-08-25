@@ -53,6 +53,7 @@ export default class Resume extends Component {
                     </p>
                     <p className="flex flex-col sm:flex-row sm:justify-between italic">
                       Software Engineering Intern
+                      <small className="not-italic">Los Gatos, CA</small>
                     </p>
                     <ul className="ml-4 py-2">UI Developer Experience Team.</ul>
                   </li>

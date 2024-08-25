@@ -87,9 +87,9 @@ const PostDetail = ({ post }) => {
   };
 
   const renderListItems = (index, listItem) => {
-    // Recursive rendering for nested list-item structures
+    // rendering for nested list-item structures
     return (
-      <li key={index}>
+      <li key={index} className="mb-4">
         {listItem.children.map((child, childIndex) => {
           if (child.type === "list-item-child") {
             return getContentFragment(
@@ -114,15 +114,15 @@ const PostDetail = ({ post }) => {
   if (storedPost) {
     // console.log("post: ", storedPost);
     return (
-      <div className="flex flex-col mt-16 mx-6 sm:mx-24">
-        <div className="mx-auto lg:mx-0 mb-10">
-          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-primary-500">
-            {storedPost.title}
-          </h2>
-          <p className="text-l sm:text-xl my-8">{storedPost.author.name}</p>
-          <span className="text-sm text-gray-700">
-            {moment(storedPost.createdAt).format("MMM DD, YYYY")}
-          </span>
+      <div className="flex flex-col mt-16 mb-16 max-w-4xl mx-auto justify-center items-center">
+        <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-primary-500">
+          {storedPost.title}
+        </h2>
+        <p className="text-l sm:text-xl my-8">{storedPost.author.name}</p>
+        <span className="text-sm text-gray-700">
+          {moment(storedPost.createdAt).format("MMM DD, YYYY")}
+        </span>
+        <div className="mx-auto">
           {storedPost.content.raw.children.map((typeObj, index) => {
             const children = typeObj.children.map((item, itemindex) =>
               getContentFragment(itemindex, item.text, item)
