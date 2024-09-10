@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import axios from "axios";
+
 import AvoglowLogin from "../images/Avoglow Login Page.png";
 import AvoglowHome from "../images/Avoglow Home Page.png";
 import AvoglowSymptoms from "../images/Avoglow Sympoms Page.png";
@@ -33,6 +35,10 @@ function Icon({ id, open }) {
 
 export default function Projects() {
   const [openIndexes, setOpenIndexes] = useState([]);
+  const [openSecretIndexes, setOpenSecretIndexes] = useState([]); // For secret projects
+  const [password, setPassword] = useState("");
+  const [isAuthorized, setIsAuthorized] = useState(false);
+  const [protectedProjects, setProtectedProjects] = useState([]);
 
   const handleOpen = (index) => {
     setOpenIndexes((prevOpenIndexes) => {
@@ -42,6 +48,36 @@ export default function Projects() {
         return [...prevOpenIndexes, index];
       }
     });
+  };
+
+  const handleOpenSecret = (index) => {
+    setOpenSecretIndexes((prevIndexes) => {
+      if (prevIndexes.includes(index)) {
+        return prevIndexes.filter((i) => i !== index);
+      } else {
+        return [...prevIndexes, index];
+      }
+    });
+  };
+
+  const handlePasswordSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        "http://localhost:3001/api/verify-password",
+        { password }
+      );
+
+      if (response.data.authorized) {
+        setIsAuthorized(true);
+        setProtectedProjects(response.data.projects);
+      } else {
+        alert("Incorrect password. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error verifying password", error);
+      alert("There was an error verifying the password. Please try again.");
+    }
   };
 
   const accordionData = [
@@ -172,6 +208,84 @@ export default function Projects() {
             )}
           </div>
         ))}
+      </div>
+      <div className="mt-12">
+        {!isAuthorized ? (
+          <div className="mb-24">
+            <h3 className="text-xl sm:text-3xl font-bold tracking-tight text-primary-500">
+              Secret Projects...
+            </h3>
+            <div className="flex justify-center mt-8">
+              <form onSubmit={handlePasswordSubmit}>
+                <input
+                  type="password"
+                  placeholder="Enter password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="border border-gray-300 px-4 py-2 rounded-md"
+                />
+                <button
+                  type="submit"
+                  className="ml-4 bg-primary-500 text-white px-4 py-2 rounded-md hover:bg-primary-700"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        ) : (
+          <div id="accordion" className="sm:mx-8">
+            {protectedProjects.map((item, index) => (
+              <div key={index} className="block relative w-full">
+                <button
+                  type="button"
+                  className="flex justify-between items-center w-full py-4 border-b border-b-blue-gray-100 text-xl text-left font-semibold leading-snug select-none hover:text-blue-gray-900 transition-colors"
+                  onClick={() => handleOpenSecret(index)}
+                >
+                  <h2
+                    className={`flex flex-row justify-between text-xl sm:text-2xl font-bold ${
+                      item.link ? "hover:text-primary-500" : ""
+                    }`}
+                  >
+                    {item.link ? (
+                      <a
+                        href={item.link[0]}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary-500 rounded-lg hover:px-2 hover:py-1.5 hover:bg-gray-100"
+                      >
+                        {item.project}
+                      </a>
+                    ) : (
+                      item.project
+                    )}
+                  </h2>
+                  <Icon id={index} open={openSecretIndexes.includes(index)} />
+                </button>
+                {openSecretIndexes.includes(index) && (
+                  <div className="overflow-hidden">
+                    <div className="inline-block w-full py-4 px-4 text-gray-700 text-sm font-light leading-normal">
+                      <p className="text-lg">{item.description}</p>
+                      {item.images && (
+                        <div className="flex flex-col sm:flex-row sm:flex-shrink mt-4">
+                          {item.images.map((image, imageIndex) => (
+                            <div className="w-full max-w-sm mx-auto mt-2 px-2">
+                              <img
+                                key={imageIndex}
+                                src={image}
+                                alt="project images"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
