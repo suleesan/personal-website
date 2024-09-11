@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { getPostDetails } from "../../services";
 import moment from "moment";
 
-// the actual article layout, used in postpage
+// the actual article layout
 const PostDetail = ({ post }) => {
   const { slug } = useParams();
   const [storedPost, setStoredPost] = useState(post); // Store the post in a state
@@ -12,7 +12,6 @@ const PostDetail = ({ post }) => {
     try {
       const data = await getPostDetails(slug);
       setStoredPost(data);
-      // console.log(data);
     } catch (error) {
       console.error("Error fetching post details", error);
     }
@@ -27,6 +26,19 @@ const PostDetail = ({ post }) => {
 
     // Handle text formatting
     if (obj) {
+      if (obj.href) {
+        modifiedText = (
+          <a
+            key={index}
+            href={obj.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 underline"
+          >
+            {text}
+          </a>
+        );
+      }
       if (obj.bold) {
         modifiedText = [<b key={index}>{text}</b>];
       }
@@ -65,6 +77,14 @@ const PostDetail = ({ post }) => {
               return renderListItems(listItemIndex, listItem);
             })}
           </ol>
+        );
+      case "bulleted-list":
+        return (
+          <ul key={index} className="list-disc ml-8 mb-8">
+            {obj.children.map((listItem, listItemIndex) => {
+              return renderListItems(listItemIndex, listItem);
+            })}
+          </ul>
         );
       case "image":
         if (obj) {
@@ -112,7 +132,6 @@ const PostDetail = ({ post }) => {
   };
 
   if (storedPost) {
-    // console.log("post: ", storedPost);
     return (
       <div className="flex flex-col mt-16 mb-16 max-w-4xl mx-auto justify-center items-center">
         <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-primary-500">
