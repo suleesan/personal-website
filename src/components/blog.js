@@ -63,10 +63,9 @@ export default function Blog() {
               </a>
             </p>
             <p className="pb-2">
-              Thinking about classes to take: CS 221 (AI: Principles and
-              Techniques), CS 145 (Intro to Big Data Systems), PSYCH 10 (Intro
-              to Stats Methods), Violin, Carta, and several more interesting
-              classes that I hopefully get during enrollment.
+              Taking CS 221 (AI: Principles and Techniques), CS 145 (Intro to
+              Big Data Systems), PSYCH 10 (Intro to Stats Methods), Violin,
+              Carta, and more.
             </p>
             <p className="pb-2">
               Working on projects, learnings, and new blog posts!

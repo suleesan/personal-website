@@ -49,7 +49,7 @@ export default class Resume extends Component {
                   <li className="py-4">
                     <p className="flex flex-col sm:flex-row sm:justify-between">
                       <strong className="font-bold text-lg">Netflix</strong>
-                      June 2024 - September 2024
+                      June 2024 - Present
                     </p>
                     <p className="flex flex-col sm:flex-row sm:justify-between italic">
                       Software Engineering Intern
