@@ -141,7 +141,7 @@ const PostDetail = ({ post }) => {
         <span className="text-sm text-gray-700">
           {moment(storedPost.createdAt).format("MMM DD, YYYY")}
         </span>
-        <div className="mx-auto">
+        <div className="mx-auto max-w-2xl">
           {storedPost.content.raw.children.map((typeObj, index) => {
             const children = typeObj.children.map((item, itemindex) =>
               getContentFragment(itemindex, item.text, item)

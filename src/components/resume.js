@@ -20,10 +20,8 @@ export default class Resume extends Component {
                 </h2>
                 <ul className="mt-2">
                   <p className="font-bold text-lg">Stanford University</p>
-                  <p className="font-semibold">B.S. Computer Science</p>
-                  <p className="font-semibold">
-                    B.A. Psychology <p className="font-normal">(2025)</p>
-                  </p>
+                  <p className="font-semibold">B.S. Computer Science (2025)</p>
+                  <p className="font-semibold">Minor in Psychology</p>
                   <p className="font-semibold">
                     M.S. Computer Science <p className="font-normal">(2026)</p>
                   </p>
@@ -31,13 +29,15 @@ export default class Resume extends Component {
                 <ul className="mt-2">
                   <li className="mr-5">
                     <p className="font-bold text-lg">Coursework</p>
-                    <p>Programming Abstractions (C++)</p>
-                    <p>Computer Organization and Systems (C)</p>
-                    <p>Linear Algebra and Multivariable Calculus</p>
-                    <p>Probability for Computer Scientists</p>
-                    <p>Cross-Platform Mobile Development (React Native)</p>
+                    <p>Operating Systems Principles (C, C++)</p>
                     <p>Design and Analysis of Algorithms (Python)</p>
+                    <p>Cross-Platform Mobile Development (React Native)</p>
                     <p>Web Programming Fundamentals (HTML, CSS, JavaScript)</p>
+                    <p>Introduction to Databases (SQL)</p>
+                    <p>
+                      Artificial Intelligence: Principles and Techniques
+                      (Python)
+                    </p>
                   </li>
                 </ul>
               </section>
@@ -143,7 +143,7 @@ export default class Resume extends Component {
                 </h2>
                 <p>
                   Python, React.js, React Native, JavaScript, HTML, CSS, C++, C,
-                  Figma, Git, Swift, TypeScript, Linux, R
+                  TypeScript Figma, Git, Swift, SQL, Linux, R
                 </p>
               </section>
               <section>
@@ -186,7 +186,7 @@ export default class Resume extends Component {
                 </h2>
                 <p>
                   Violin and Piano, App and Web Development, Film Photography,
-                  Blogging, Reading, Hiking, Pokemon
+                  Blogging, Reading, Pokemon
                 </p>
               </section>
             </div>

@@ -64,8 +64,8 @@ export default function Blog() {
             </p>
             <p className="pb-2">
               Taking CS 221 (AI: Principles and Techniques), CS 145 (Intro to
-              Big Data Systems), PSYCH 10 (Intro to Stats Methods), Violin,
-              Carta, and more.
+              Big Data Systems), DESIGN 236P (Print on Purpose), Violin, Carta,
+              and more.
             </p>
             <p className="pb-2">
               Working on projects, learnings, and new blog posts!
