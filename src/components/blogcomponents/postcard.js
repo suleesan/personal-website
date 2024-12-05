@@ -11,7 +11,7 @@ const PostCard = ({ post }) => (
         </span>
       </div>
       {post.image && (
-        <div className="pt-2 h-48 overflow-hidden rounded-lg flex justify-center items-center">
+        <div className="pt-2 h-48 overflow-hidden flex justify-center items-center">
           <img
             alt={post.title}
             style={{
@@ -23,7 +23,7 @@ const PostCard = ({ post }) => (
           />
         </div>
       )}
-      <div className="group relative">
+      <div>
         <h3 className="mt-3 text-base sm:text-lg font-semibold leading-6 text-primary-500 group-hover:text-primary-700">
           {post.title}
         </h3>
@@ -36,14 +36,14 @@ const PostCard = ({ post }) => (
             width="30px"
             className="align-middle rounded-full"
             src={post.author.photo.url}
-            style={{ borderRadius: '50%' }} // Add this style to make the image circular
+            style={{ borderRadius: '50%' }}
           /> */}
             <p className="inline align-middle text-gray-700 font-medium text-sm ml-0">
               {post.author.name}
             </p>
           </div>
         </div>
-        <p className="mt-4 sm:mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
+        <p className="sm:mt-2 line-clamp-3 text-sm leading-6 text-gray-600">
           {post.description}
         </p>
       </div>
