@@ -89,13 +89,26 @@ const PostDetail = ({ post }) => {
       case "image":
         if (obj) {
           return (
-            <img
+            <div
               key={index}
-              alt={obj.title}
-              height={obj.height}
-              width={obj.width}
-              src={obj.src}
-            />
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                margin: "20px 0",
+              }}
+            >
+              <img
+                alt={obj.title}
+                style={{
+                  maxWidth: "400px",
+                  maxHeight: "400px",
+                  width: "auto",
+                  height: "auto",
+                  objectFit: "contain",
+                }}
+                src={obj.src}
+              />
+            </div>
           );
         } else {
           // If obj is null, return the original text without modification
