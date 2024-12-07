@@ -19,7 +19,7 @@ export default function Blog() {
     }
 
     fetchData();
-  }, []); // The empty dependency array ensures the effect runs only once, similar to getStaticProps
+  }, []);
 
   return (
     <div className="bg-white py-8 sm:py-16">

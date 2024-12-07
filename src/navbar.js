@@ -55,6 +55,12 @@ function Navbar() {
                 >
                   Blog
                 </Link>
+                <Link
+                  to="/playground"
+                  className="sm:mx-3 block rounded-lg px-2 py-1.5 text-base font-semibold leading-7 text-primary-500 hover:bg-gray-100"
+                >
+                  Playground
+                </Link>
               </div>
             </div>
           </div>

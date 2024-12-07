@@ -18,6 +18,7 @@ const PostDetail = ({ post }) => {
   }
 
   useEffect(() => {
+    window.scrollTo(0, 0); // fix bug where post opens to middle of page...?
     fetchData();
   }, []);
 

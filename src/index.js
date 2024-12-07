@@ -1,15 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/layout";
 import Intro from "./components/intro";
 import Projects from "./components/projects";
 import Resume from "./components/resume";
-import Blog from './components/blog';
-import PostDetail from './components/blogcomponents/postdetail';
+import Blog from "./components/blog";
+import PostDetail from "./components/blogcomponents/postdetail";
+import Playground from "./components/playground";
 
 export default function App() {
   return (
@@ -19,8 +20,9 @@ export default function App() {
           <Route index element={<Intro />} />
           <Route path="projects" element={<Projects />} />
           <Route path="resume" element={<Resume />} />
-          <Route path="blog" element={<Blog/>} />
+          <Route path="blog" element={<Blog />} />
           <Route path="post/:slug" element={<PostDetail />} />
+          <Route path="playground" element={<Playground />} />
         </Route>
       </Routes>
     </BrowserRouter>
