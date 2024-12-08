@@ -91,50 +91,6 @@ export default class Resume extends Component {
                       community.
                     </ul>
                   </li>
-                  <li className="py-4">
-                    <p className="flex flex-col sm:flex-row sm:justify-between">
-                      <strong className="font-bold text-lg">
-                        General Atomics
-                      </strong>
-                      June 2023 - August 2023
-                    </p>
-                    <p className="flex flex-col sm:flex-row sm:justify-between italic">
-                      Software Engineering Intern
-                      <small className="not-italic">San Diego, CA</small>
-                    </p>
-                    <ul className="ml-4 py-2">
-                      Designed and implemented functionality for the automated
-                      testing framework to access and interact with the MQ-9
-                      aircraft’s weapons interface for testing weapon profiles.
-                    </ul>
-                    <ul className="ml-4 py-2">
-                      Increased test coverage, reduced testing costs by 95%, and
-                      improved efficiency for the MQ-9’s weapon systems by
-                      developing automated regression tests using Python, Linux,
-                      and Squish.
-                    </ul>
-                  </li>
-                  <li className="py-4">
-                    <p className="flex flex-col sm:flex-row sm:justify-between">
-                      <strong className="font-bold text-lg">
-                        Stanford Code in Place
-                      </strong>
-                      April 2023 - June 2023
-                    </p>
-                    <p className="italic">Section Leader</p>
-                    <ul className="ml-4 py-2">
-                      Led weekly discussion sections for Code in Place,
-                      Stanford’s free coding course based on CS 106A, Stanford’s
-                      introductory computer science course.
-                    </ul>
-                    <ul className="ml-4 py-2">
-                      Taught a group of ~10 students various programming topics
-                      in Python such as lists, dictionaries, and graphics
-                      through interactive activities; guided students on
-                      programming logic and debugging strategies and maintained
-                      student forum.
-                    </ul>
-                  </li>
                 </ul>
               </section>
               <section>
@@ -143,17 +99,7 @@ export default class Resume extends Component {
                 </h2>
                 <p>
                   Python, React.js, React Native, JavaScript, HTML, CSS, C++, C,
-                  TypeScript Figma, Git, Swift, SQL, Linux, R
-                </p>
-              </section>
-              <section>
-                <h2 className="text-xl sm:text-2xl mt-6 pb-1 border-b font-semibold">
-                  Student Organizations
-                </h2>
-                <p>
-                  Stanford Health Consulting Group, Stanford Women in Computer
-                  Science, Stanford Women in Design, Stanford Synapse, Stanford
-                  Symphony Orchestra
+                  TypeScript Figma, Git, SQL, Linux, R, Swift
                 </p>
               </section>
               <section>
@@ -179,15 +125,6 @@ export default class Resume extends Component {
                     <p>Part of Carnegie Hall's National Youth Ensembles</p>
                   </li>
                 </ul>
-              </section>
-              <section>
-                <h2 className="text-xl sm:text-2xl mt-6 pb-1 border-b font-semibold">
-                  Interests
-                </h2>
-                <p>
-                  Violin and Piano, App and Web Development, Film Photography,
-                  Blogging, Reading, Pokemon
-                </p>
               </section>
             </div>
           </main>
