@@ -37,12 +37,12 @@ function Navbar() {
                 >
                   Home
                 </Link>
-                <Link
+                {/* <Link
                   to="/resume"
                   className="sm:mx-3 block rounded-lg px-2 py-1.5 text-base font-semibold leading-7 text-primary-500 hover:bg-gray-100"
                 >
                   Resume
-                </Link>
+                </Link> */}
                 <Link
                   to="/projects"
                   className="sm:mx-3 block rounded-lg px-2 py-1.5 text-base font-semibold leading-7 text-primary-500 hover:bg-gray-100"

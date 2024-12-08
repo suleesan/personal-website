@@ -213,7 +213,7 @@ export default function Projects() {
         {!isAuthorized ? (
           <div className="mb-24">
             <h3 className="text-xl sm:text-3xl font-bold tracking-tight text-primary-500">
-              Secret Projects...
+              Secret Projects :P
             </h3>
             <div className="flex justify-center mt-8">
               <form onSubmit={handlePasswordSubmit}>
