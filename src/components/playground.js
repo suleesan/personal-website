@@ -1,4 +1,5 @@
 import React from "react";
+import { Typewriter, Carousel } from "./playgroundcomponents";
 
 export default function Playground() {
   return (
@@ -9,10 +10,13 @@ export default function Playground() {
             Playground
           </h2>
           <p className="mt-2 text-base sm:text-lg leading-8 pb-10">
-            Some explorations.
+            Some explorations!
           </p>
         </div>
-        <div></div>
+        <div className="space-y-10">
+          <Typewriter />
+          <Carousel />
+        </div>
       </div>
     </div>
   );

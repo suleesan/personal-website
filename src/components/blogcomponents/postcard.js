@@ -29,15 +29,6 @@ const PostCard = ({ post }) => (
         </h3>
         <div className="flex text-center items-center justify-start mb-8 w-full">
           <div className="flex mb-4 lg:mb-0">
-            {/* TODO import a better profile pic LOL */}
-            {/* <img
-            alt={post.author.name}
-            height="30px"
-            width="30px"
-            className="align-middle rounded-full"
-            src={post.author.photo.url}
-            style={{ borderRadius: '50%' }}
-          /> */}
             <p className="inline align-middle text-gray-700 font-medium text-sm ml-0">
               {post.author.name}
             </p>

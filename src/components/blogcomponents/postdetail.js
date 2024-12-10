@@ -6,7 +6,7 @@ import moment from "moment";
 // the actual article layout
 const PostDetail = ({ post }) => {
   const { slug } = useParams();
-  const [storedPost, setStoredPost] = useState(post); // Store the post in a state
+  const [storedPost, setStoredPost] = useState(post);
 
   async function fetchData() {
     try {
@@ -25,7 +25,7 @@ const PostDetail = ({ post }) => {
   const getContentFragment = (index, text, obj, type) => {
     let modifiedText = text;
 
-    // Handle text formatting
+    // Handle text
     if (obj) {
       if (obj.href) {
         modifiedText = (
@@ -151,7 +151,20 @@ const PostDetail = ({ post }) => {
         <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-primary-500">
           {storedPost.title}
         </h2>
-        <p className="text-l sm:text-xl my-8">{storedPost.author.name}</p>
+        <div className="my-8 flex flex-row items-center gap-4">
+          <img
+            alt={storedPost.author.name}
+            src={storedPost.author.photo.url}
+            style={{
+              height: "50px",
+              width: "50px",
+              borderRadius: "50%",
+              objectFit: "cover",
+            }}
+          />
+          <p className="text-l sm:text-xl">{storedPost.author.name}</p>
+        </div>
+
         <span className="text-sm text-gray-700">
           {moment(storedPost.createdAt).format("MMM DD, YYYY")}
         </span>
