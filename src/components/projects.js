@@ -15,6 +15,7 @@ import KindKitchen1 from "../images/KindKitchen 18.25.49.png";
 import KindKitchen2 from "../images/KindKitchen 18.25.56.png";
 import KindKitchen3 from "../images/KindKitchen 18.26.04.png";
 import KindKitchen4 from "../images/KindKitchen 18.26.24.png";
+import CourseCalendar from "../images/CourseCalendar.png";
 
 function Icon({ id, open }) {
   return (
@@ -134,6 +135,16 @@ export default function Projects() {
       description:
         "For TreeHacks 2024, my team and I built KindKitchen using React Native and Convex. We aimed to connect patients to cultural, home-cooked meals provided by volunteers and allow users to opt-in to shared meal experiences to combat loneliness and isolation in their treatment journey. Users can specify dietary restrictions and preferences to filter meals, request a meal to be delivered, or alternatively if no meals are available, chat with an AI chatbot that provides easy-to-cook recipes tailored to the user’s restrictions/preferences.",
       images: [KindKitchen1, KindKitchen2, KindKitchen3, KindKitchen4],
+    },
+    {
+      project: "Course Calendar",
+      link: [
+        "https://course-calendar.vercel.app/",
+        "https://github.com/suleesan/course-calendar",
+      ],
+      description:
+        "This is a simple course planner built with React where I plan out my course schedules for every quarter. Solutions exist (ex: Carta, onCourse) where it'll automatically plan out quarters for you, but I like the manual aspect. Users can add/delete courses per quarter, switch between quarters, update classes, and this is all saved with local storage.",
+      images: [CourseCalendar],
     },
   ];
 
