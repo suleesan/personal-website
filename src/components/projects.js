@@ -143,7 +143,7 @@ export default function Projects() {
         "https://github.com/suleesan/course-calendar",
       ],
       description:
-        "This is a simple course planner built with React where I plan out my course schedules for every quarter. Solutions exist (ex: Carta, onCourse) where it'll automatically plan out quarters for you, but I like the manual aspect. Users can add/delete courses per quarter, switch between quarters, update classes, and this is all saved with local storage.",
+        "This is a simple course planner built with React where I plan out my course schedules for every quarter. Solutions exist (ex: Carta, onCourse) where it'll automatically plan out quarters for you, but I like the manual aspect. Users can add/delete courses per quarter, switch between quarters, update classes, and this is all saved with local storage. You can also share your calendar! View mine here (https://course-calendar.vercel.app/?id=5ddb9557-6598-4512-bb12-841de10018dc)",
       images: [CourseCalendar],
     },
   ];
