@@ -13,7 +13,7 @@ import KindKitchen2 from "../images/KindKitchen 18.25.56.png";
 import KindKitchen3 from "../images/KindKitchen 18.26.04.png";
 import KindKitchen4 from "../images/KindKitchen 18.26.24.png";
 import CourseCalendar from "../images/CourseCalendar.png";
-import { verifyPassword } from "../protected/passwordUtils";
+import { verifyPassword } from "./passwordUtils";
 
 function Icon({ id, open }) {
   return (
