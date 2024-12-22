@@ -35,8 +35,8 @@ export default function Intro() {
                 </p>
                 <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-8 text-gray-600">
                   In my free time, I enjoy playing the violin and piano,
-                  watching the latest Netflix shows, trying new food, film
-                  photography, and reading.
+                  watching the latest Netflix shows, trying new food and ranking
+                  restaurants on Beli, film photography, and reading.
                 </p>
               </div>
             </div>

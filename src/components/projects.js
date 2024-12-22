@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
-
 import AvoglowLogin from "../images/Avoglow Login Page.png";
 import AvoglowHome from "../images/Avoglow Home Page.png";
 import AvoglowSymptoms from "../images/Avoglow Sympoms Page.png";
@@ -15,6 +13,7 @@ import KindKitchen2 from "../images/KindKitchen 18.25.56.png";
 import KindKitchen3 from "../images/KindKitchen 18.26.04.png";
 import KindKitchen4 from "../images/KindKitchen 18.26.24.png";
 import CourseCalendar from "../images/CourseCalendar.png";
+import { verifyPassword } from "../protected/passwordUtils";
 
 function Icon({ id, open }) {
   return (
@@ -40,6 +39,17 @@ export default function Projects() {
   const [isAuthorized, setIsAuthorized] = useState(false);
   const [protectedProjects, setProtectedProjects] = useState([]);
 
+  const handlePasswordSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const data = await verifyPassword(password);
+      setProtectedProjects(data);
+      setIsAuthorized(true);
+    } catch (err) {
+      alert(err.message);
+    }
+  };
+
   const handleOpen = (index) => {
     setOpenIndexes((prevOpenIndexes) => {
       if (prevOpenIndexes.includes(index)) {
@@ -58,26 +68,6 @@ export default function Projects() {
         return [...prevIndexes, index];
       }
     });
-  };
-
-  const handlePasswordSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post(
-        "http://localhost:3001/api/verify-password",
-        { password }
-      );
-
-      if (response.data.authorized) {
-        setIsAuthorized(true);
-        setProtectedProjects(response.data.projects);
-      } else {
-        alert("Incorrect password. Please try again.");
-      }
-    } catch (error) {
-      console.error("Error verifying password", error);
-      alert("There was an error verifying the password. Please try again.");
-    }
   };
 
   const accordionData = [
@@ -181,14 +171,15 @@ export default function Projects() {
       ],
       description: (
         <p className="text-lg">
-          This is a simple course planner built with React where I plan out my
-          course schedules for every quarter. Solutions exist (ex: Carta,
-          onCourse) where it'll automatically plan out quarters for you, but I
-          like the manual aspect. Users can add/delete courses per quarter,
-          switch between quarters, and update classes. All data is saved with
-          local storage, and you can share your calendar. View mine{" "}
+          This is a simple course planner built with React and Supabase where I
+          plan out my course schedules for every quarter. I used to do this on
+          my iPad and draw out the classes; solutions exist (ex: Carta,
+          onCourse) where they'll automatically plan out quarters for you, but I
+          like the manual aspect. Users can add/delete/update classes per
+          quarter, switch between quarters, and share their calendars. All data
+          is saved with local storage. View mine{" "}
           <a
-            href="https://course-calendar.vercel.app/?id=5ddb9557-6598-4512-bb12-841de10018dc"
+            href="https://course-calendar.vercel.app/?id=df856d13-5769-4869-af5f-807484548d91"
             target="_blank"
             rel="noopener noreferrer"
             className="text-primary-500 hover:bg-gray-100 hover:px-1 rounded-lg"
@@ -302,7 +293,7 @@ export default function Projects() {
             </div>
           </div>
         ) : (
-          <div id="accordion" className="sm:mx-8">
+          <div id="accordion" className="sm:mx-8 mb-24">
             {protectedProjects.map((item, index) => (
               <div key={index} className="block relative w-full">
                 <button
@@ -322,10 +313,10 @@ export default function Projects() {
                         rel="noopener noreferrer"
                         className="text-primary-500 rounded-lg hover:px-2 hover:py-1.5 hover:bg-gray-100"
                       >
-                        {item.project}
+                        {item.project_name}
                       </a>
                     ) : (
-                      item.project
+                      item.project_name
                     )}
                   </h2>
                   <Icon id={index} open={openSecretIndexes.includes(index)} />

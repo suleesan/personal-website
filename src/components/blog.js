@@ -63,9 +63,7 @@ export default function Blog() {
               </a>
             </p>
             <p className="pb-2">
-              Taking CS 221 (AI: Principles and Techniques), CS 145 (Intro to
-              Big Data Systems), DESIGN 236P (Print on Purpose), Violin, Carta,
-              and more.
+              Taking a LOT of psychology courses this quarter. Excited!!
             </p>
             <p className="pb-2">
               Working on projects, learnings, and new blog posts!
