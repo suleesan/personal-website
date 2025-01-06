@@ -13,7 +13,6 @@ import KindKitchen2 from "../images/KindKitchen 18.25.56.png";
 import KindKitchen3 from "../images/KindKitchen 18.26.04.png";
 import KindKitchen4 from "../images/KindKitchen 18.26.24.png";
 import CourseCalendar from "../images/CourseCalendar.png";
-import { verifyPassword } from "./passwordUtils";
 
 function Icon({ id, open }) {
   return (
@@ -34,21 +33,7 @@ function Icon({ id, open }) {
 
 export default function Projects() {
   const [openIndexes, setOpenIndexes] = useState([]);
-  const [openSecretIndexes, setOpenSecretIndexes] = useState([]); // For secret projects
-  const [password, setPassword] = useState("");
-  const [isAuthorized, setIsAuthorized] = useState(false);
-  const [protectedProjects, setProtectedProjects] = useState([]);
-
-  const handlePasswordSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const data = await verifyPassword(password);
-      setProtectedProjects(data);
-      setIsAuthorized(true);
-    } catch (err) {
-      alert(err.message);
-    }
-  };
+  const [openMusicIndexes, setOpenMusicIndexes] = useState([]); // For music projects
 
   const handleOpen = (index) => {
     setOpenIndexes((prevOpenIndexes) => {
@@ -60,8 +45,8 @@ export default function Projects() {
     });
   };
 
-  const handleOpenSecret = (index) => {
-    setOpenSecretIndexes((prevIndexes) => {
+  const handleOpenMusic = (index) => {
+    setOpenMusicIndexes((prevIndexes) => {
       if (prevIndexes.includes(index)) {
         return prevIndexes.filter((i) => i !== index);
       } else {
@@ -193,6 +178,67 @@ export default function Projects() {
     },
   ];
 
+  const musicProjects = [
+    {
+      project: "Pokemon Gold/Silver/Crystal Violin Cover",
+      link: ["https://youtu.be/fUDsSFXgPqQ?si=dVLjqvXTnfHX_0Jf"],
+      description: (
+        <>
+          <p className="text-lg">
+            Recorded in 2020, I meticulously combed through various
+            transcriptions, combined them, and edited them after listening to
+            the original soundtrack countless times to create the most accurate
+            cover I could. This was one of the times I was grateful for perfect
+            pitch because many of the transcriptions I found had errors that I
+            had to fix. It was also difficult to piece these together because of
+            Acapella's 1 minute limit for videos back then. I also had to edit
+            the transcriptions I found as they were usually piano transcriptions
+            and had to figure out how to divide them up into different violin
+            parts. I poured my soul into this cover and the result is this
+            video!
+          </p>
+          <p className="text-lg mt-4">
+            My personal favorite tracks are Violet/Olivine City, the SURF THEME,
+            Route 26, and the ending credits.
+          </p>
+        </>
+      ),
+      images: [],
+    },
+    {
+      project: "Howl's Moving Castle Violin and Piano Cover",
+      link: ["https://youtu.be/imgXrUz7hso?si=FiyEmBLfbnlXUldU"],
+      description: (
+        <p className="text-lg">
+          Also recorded in 2020, this is one of my earlier attempts at creating
+          covers (and certainly sounds a bit rougher). I similarly found various
+          transcriptions of the theme, combined them, figured out the different
+          parts, and edited them for accuracy to create this cover. Fun fact: I
+          tuned my G string down to an F for one of the cuts (one of my FAVORITE
+          parts of the piece). Can you find it?
+        </p>
+      ),
+      images: [],
+    },
+    {
+      project: "Your Lie in April Chopin Ballade No. 1 Violin/Piano Cover",
+      link: ["https://youtu.be/-yIUO15h3zY?si=dzwuWgRCOsRuBx2B"],
+      description: (
+        <p className="text-lg">
+          Also recorded in 2020 (I had a lot of time on my hands). I think this
+          one was the most difficult one I put together as I am a much better
+          violinist than I am a pianist. I learned the entirety of Chopin's
+          Ballade on my own to make this cover, but chose to only record the
+          excerpt with the violin (coincidentally also my favorite part of the
+          original piano piece as well). Learning the piano part was definitely
+          the hardest part of this project. While not perfect, I loved making
+          this!
+        </p>
+      ),
+      images: [],
+    },
+  ];
+
   return (
     <div className="flex flex-col mt-16 mx-6 sm:mx-24">
       <div className="mx-auto max-w-2xl lg:mx-0 mb-10">
@@ -210,6 +256,7 @@ export default function Projects() {
                 type="button"
                 className="flex justify-between items-center w-full py-4 border-b border-b-blue-gray-100 text-xl text-left font-semibold leading-snug select-none hover:text-blue-gray-900 transition-colors"
                 onClick={() => handleOpen(index)}
+                key={index}
               >
                 <h2
                   className={`flex flex-row justify-between text-xl sm:text-2xl font-bold ${
@@ -268,83 +315,69 @@ export default function Projects() {
             </div>
           ))}
       </div>
-      <div className="mt-12">
-        {!isAuthorized ? (
-          <div className="mb-24">
-            <h3 className="text-xl sm:text-3xl font-bold tracking-tight text-primary-500">
-              Secret Projects :P
-            </h3>
-            <div className="flex justify-center mt-8">
-              <form onSubmit={handlePasswordSubmit}>
-                <input
-                  type="password"
-                  placeholder="Enter password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="border border-gray-300 px-4 py-2 rounded-md"
-                />
-                <button
-                  type="submit"
-                  className="ml-4 bg-primary-500 text-white px-4 py-2 rounded-md hover:bg-primary-700"
+      <div className="mx-auto lg:mx-0 mb-10 mt-12">
+        <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-primary-500 mb-4">
+          Music Projects
+        </h2>
+        <p className="mx-8 text-lg">
+          I was really reluctant to finally make these public (originally they
+          were my "secret" projects), but I really had a lot of fun making these
+          back in high school and put a lot of effort into them, despite my
+          limited technology (Apple earbuds). Enjoy!
+        </p>
+      </div>
+      <div>
+        <div id="accordion" className="sm:mx-8 mb-24">
+          {musicProjects.map((item, index) => (
+            <div key={index} className="block relative w-full">
+              <button
+                type="button"
+                className="flex justify-between items-center w-full py-4 border-b border-b-blue-gray-100 text-xl text-left font-semibold leading-snug select-none hover:text-blue-gray-900 transition-colors"
+                onClick={() => handleOpenMusic(index)}
+              >
+                <h2
+                  className={`flex flex-row justify-between text-xl sm:text-2xl font-bold ${
+                    item.link ? "hover:text-primary-500" : ""
+                  }`}
                 >
-                  Submit
-                </button>
-              </form>
-            </div>
-          </div>
-        ) : (
-          <div id="accordion" className="sm:mx-8 mb-24">
-            {protectedProjects.map((item, index) => (
-              <div key={index} className="block relative w-full">
-                <button
-                  type="button"
-                  className="flex justify-between items-center w-full py-4 border-b border-b-blue-gray-100 text-xl text-left font-semibold leading-snug select-none hover:text-blue-gray-900 transition-colors"
-                  onClick={() => handleOpenSecret(index)}
-                >
-                  <h2
-                    className={`flex flex-row justify-between text-xl sm:text-2xl font-bold ${
-                      item.link ? "hover:text-primary-500" : ""
-                    }`}
-                  >
-                    {item.link ? (
-                      <a
-                        href={item.link[0]}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-primary-500 rounded-lg hover:px-2 hover:py-1.5 hover:bg-gray-100"
-                      >
-                        {item.project_name}
-                      </a>
-                    ) : (
-                      item.project_name
+                  {item.link ? (
+                    <a
+                      href={item.link[0]}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary-500 rounded-lg hover:px-2 hover:py-1.5 hover:bg-gray-100"
+                    >
+                      {item.project}
+                    </a>
+                  ) : (
+                    item.project
+                  )}
+                </h2>
+                <Icon id={index} open={openMusicIndexes.includes(index)} />
+              </button>
+              {openMusicIndexes.includes(index) && (
+                <div className="overflow-hidden">
+                  <div className="inline-block w-full py-4 px-4 text-gray-700 text-sm font-light leading-normal">
+                    <p className="text-lg">{item.description}</p>
+                    {item.images && (
+                      <div className="flex flex-col sm:flex-row sm:flex-shrink mt-4">
+                        {item.images.map((image, imageIndex) => (
+                          <div className="w-full max-w-sm mx-auto mt-2 px-2">
+                            <img
+                              key={imageIndex}
+                              src={image}
+                              alt="project images"
+                            />
+                          </div>
+                        ))}
+                      </div>
                     )}
-                  </h2>
-                  <Icon id={index} open={openSecretIndexes.includes(index)} />
-                </button>
-                {openSecretIndexes.includes(index) && (
-                  <div className="overflow-hidden">
-                    <div className="inline-block w-full py-4 px-4 text-gray-700 text-sm font-light leading-normal">
-                      <p className="text-lg">{item.description}</p>
-                      {item.images && (
-                        <div className="flex flex-col sm:flex-row sm:flex-shrink mt-4">
-                          {item.images.map((image, imageIndex) => (
-                            <div className="w-full max-w-sm mx-auto mt-2 px-2">
-                              <img
-                                key={imageIndex}
-                                src={image}
-                                alt="project images"
-                              />
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                    </div>
                   </div>
-                )}
-              </div>
-            ))}
-          </div>
-        )}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
