@@ -120,10 +120,10 @@ export default function Projects() {
           Click the title to play with my Pokedex! I'm currently cooking up a
           different project that involves Pokemon, but while I was playing
           around with the PokeAPI, I thought I'd build a super quick Pokedex
-          with React. It features the first 50 Pokemon in the Pokedex and has a
-          search feature (currently still in the process of figuring out how to
-          load more Pokemon efficiently). I also used Redux and local storage to
-          archive data and reduce load time. Enjoy!
+          with React. It features Pokemon from Generations I to IV in the
+          Pokedex and has a search feature. It fetches Pokemon upon
+          click/search; I also used Redux and local storage to save the data and
+          reduce load time. Enjoy!
         </p>
       ),
       images: [Pokedex],

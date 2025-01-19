@@ -147,7 +147,7 @@ const PostDetail = ({ post }) => {
 
   if (storedPost) {
     return (
-      <div className="flex flex-col mt-16 mb-16 max-w-4xl mx-auto justify-center items-center">
+      <div className="flex flex-col mt-16 mb-16 max-w-4xl mx-auto">
         <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-primary-500">
           {storedPost.title}
         </h2>
@@ -162,13 +162,14 @@ const PostDetail = ({ post }) => {
               objectFit: "cover",
             }}
           />
-          <p className="text-l sm:text-xl">{storedPost.author.name}</p>
+          <div>
+            <p className="text-sm sm:text-l">{storedPost.author.name}</p>
+            <p className="text-xs sm:text-m text-gray-700">
+              {moment(storedPost.createdAt).format("MMM DD, YYYY")}
+            </p>
+          </div>
         </div>
-
-        <span className="text-sm text-gray-700">
-          {moment(storedPost.createdAt).format("MMM DD, YYYY")}
-        </span>
-        <div className="mx-auto max-w-2xl">
+        <div className="mx-auto max-w-2xl font-serif">
           {storedPost.content.raw.children.map((typeObj, index) => {
             const children = typeObj.children.map((item, itemindex) =>
               getContentFragment(itemindex, item.text, item)
