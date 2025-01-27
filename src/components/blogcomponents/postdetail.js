@@ -151,7 +151,7 @@ const PostDetail = ({ post }) => {
         <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-primary-500">
           {storedPost.title}
         </h2>
-        <div className="my-8 flex flex-row items-center gap-4">
+        <div className="my-4 flex flex-row items-center gap-4">
           <img
             alt={storedPost.author.name}
             src={storedPost.author.photo.url}
@@ -169,7 +169,8 @@ const PostDetail = ({ post }) => {
             </p>
           </div>
         </div>
-        <div className="mx-auto max-w-2xl font-serif">
+        <div class="w-full h-[1px] bg-gray-300" />
+        <div className="max-w-2xl font-serif">
           {storedPost.content.raw.children.map((typeObj, index) => {
             const children = typeObj.children.map((item, itemindex) =>
               getContentFragment(itemindex, item.text, item)
