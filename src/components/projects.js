@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import AvoglowLogin from "../images/Avoglow Login Page.png";
-import AvoglowHome from "../images/Avoglow Home Page.png";
-import AvoglowSymptoms from "../images/Avoglow Sympoms Page.png";
-import AvoglowCalendar from "../images/Avoglow Calendar Page.png";
-import Spotify from "../images/Spotify Top Tracks Project.png";
-import Twitter from "../images/twitter clone.png";
-import WordleLight from "../images/Wordle Light.png";
-import WordleDark from "../images/Wordle Dark.png";
-import Pokedex from "../images/pokedex.png";
-import KindKitchen1 from "../images/KindKitchen 18.25.49.png";
-import KindKitchen2 from "../images/KindKitchen 18.25.56.png";
-import KindKitchen3 from "../images/KindKitchen 18.26.04.png";
-import KindKitchen4 from "../images/KindKitchen 18.26.24.png";
-import CourseCalendar from "../images/CourseCalendar.png";
+import AvoglowLogin from "../images/projects/Avoglow Login Page.png";
+import AvoglowHome from "../images/projects/Avoglow Home Page.png";
+import AvoglowSymptoms from "../images/projects/Avoglow Sympoms Page.png";
+import AvoglowCalendar from "../images/projects/Avoglow Calendar Page.png";
+import Spotify from "../images/projects/Spotify Top Tracks Project.png";
+import Twitter from "../images/projects/twitter clone.png";
+import WordleLight from "../images/projects/Wordle Light.png";
+import WordleDark from "../images/projects/Wordle Dark.png";
+import Pokedex from "../images/projects/pokedex.png";
+import KindKitchen1 from "../images/projects/KindKitchen 18.25.49.png";
+import KindKitchen2 from "../images/projects/KindKitchen 18.25.56.png";
+import KindKitchen3 from "../images/projects/KindKitchen 18.26.04.png";
+import KindKitchen4 from "../images/projects/KindKitchen 18.26.24.png";
+import CourseCalendar from "../images/projects/CourseCalendar.png";
 
 function Icon({ id, open }) {
   return (
