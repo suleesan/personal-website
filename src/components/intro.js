@@ -18,48 +18,46 @@ export default function Intro() {
             }}
           />
         </div>
-        <div className="flex flex-col sm:px-12">
-          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary-500">
-            Susan Lee
-          </h1>
-          <div className="flex flex-col mx-auto sm:flex-row items-center text-left w-full max-w-4xl gap-20 mt-6">
-            <div className="w-2/3 flex flex-col gap-4">
-              <p className="text-lg font-serif sm:text-xl leading-7 text-gray-800">
-                Hi! I'm Susan, a senior at Stanford studying Computer Science
-                and Psychology. I'm also pursuing my master's degree in Computer
-                Science with a focus in Human-Computer Interaction.
-              </p>
-              <p className="text-lg font-serif sm:text-xl leading-7 text-gray-800">
-                I’m currently a software engineering intern at Netflix on the UI
-                Developer Experience team working on all things UI: our design
-                system and component library, observability, component testing,
-                and more.
-              </p>
-              <div className="flex justify-start gap-4 pt-4">
-                <a
-                  href="https://www.linkedin.com/in/susan-lee-12957a217/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-primary-500"
-                >
-                  <FiLinkedin size={28} />
-                </a>
-                <button
-                  onClick={() =>
-                    (window.location.href = "mailto:leesusan@stanford.edu")
-                  }
-                  className="text-primary-500"
-                >
-                  <FiMail size={28} />
-                </button>
-              </div>
+        <div className="flex flex-col mx-auto sm:flex-row items-center text-left w-full max-w-4xl gap-20">
+          <div className="w-2/3 flex flex-col gap-4">
+            <h1 className="text-4xl sm:text-6xl -mx-16 font-bold tracking-tight text-primary-500">
+              Susan Lee
+            </h1>
+            <p className="text-lg mt-6 font-serif sm:text-xl leading-7 text-gray-800">
+              Hi! I'm Susan, a senior at Stanford studying Computer Science and
+              Psychology. I'm also pursuing my master's degree in Computer
+              Science with a focus in Human-Computer Interaction.
+            </p>
+            <p className="text-lg font-serif sm:text-xl leading-7 text-gray-800">
+              I’m currently a software engineering intern at Netflix on the UI
+              Developer Experience team working on all things UI: our design
+              system and component library, observability, component testing,
+              and more.
+            </p>
+            <div className="flex justify-start gap-4 pt-4">
+              <a
+                href="https://www.linkedin.com/in/susan-lee-12957a217/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-primary-500"
+              >
+                <FiLinkedin size={28} />
+              </a>
+              <button
+                onClick={() =>
+                  (window.location.href = "mailto:leesusan@stanford.edu")
+                }
+                className="text-primary-500"
+              >
+                <FiMail size={28} />
+              </button>
             </div>
-            <img
-              src={headshot}
-              className="w-full sm:w-1/3 max-w-xs rounded-lg aspect-square object-cover object-[50%_60%]"
-              alt="Headshot"
-            />
           </div>
+          <img
+            src={headshot}
+            className="w-full sm:w-1/3 max-w-xs mt-12 rounded-lg aspect-square object-cover object-[50%_60%]"
+            alt="Headshot"
+          />
         </div>
         <div
           className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
