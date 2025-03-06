@@ -18,37 +18,32 @@ const PostDetail = ({ post }) => {
   }
 
   useEffect(() => {
-    window.scrollTo(0, 0); // fix bug where post opens to middle of page...?
+    window.scrollTo(0, 0); // fix bug where post opens to the middle of the page...?
     fetchData();
   }, []);
 
   const getContentFragment = (index, text, obj, type) => {
     let modifiedText = text;
 
-    // Handle text
     if (obj) {
-      if (obj.href) {
-        modifiedText = (
-          <a
-            key={index}
-            href={obj.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-500 underline"
-          >
-            {text}
-          </a>
-        );
-      }
-      if (obj.bold) {
-        modifiedText = [<b key={index}>{text}</b>];
-      }
-      if (obj.italic) {
-        modifiedText = [<em key={index}>{text}</em>];
-      }
-      if (obj.underline) {
-        modifiedText = [<u key={index}>{text}</u>];
-      }
+      if (obj.bold) modifiedText = <b key={index}>{text}</b>;
+      if (obj.italic) modifiedText = <em key={index}>{text}</em>;
+      if (obj.underline) modifiedText = <u key={index}>{text}</u>;
+    }
+
+    // hrefs
+    if (obj && obj.type === "link" && obj.href) {
+      return (
+        <a
+          key={index}
+          href={obj.href}
+          target={"_blank"}
+          rel="noopener noreferrer"
+          className="text-blue-500 underline"
+        >
+          {obj.children[0]?.text || "Link"}
+        </a>
+      );
     }
 
     // Handle different types
@@ -74,17 +69,17 @@ const PostDetail = ({ post }) => {
       case "numbered-list":
         return (
           <ol key={index} className="list-decimal ml-8 mb-8">
-            {obj.children.map((listItem, listItemIndex) => {
-              return renderListItems(listItemIndex, listItem);
-            })}
+            {obj.children.map((listItem, listItemIndex) =>
+              renderListItems(listItemIndex, listItem)
+            )}
           </ol>
         );
       case "bulleted-list":
         return (
           <ul key={index} className="list-disc ml-8 mb-8">
-            {obj.children.map((listItem, listItemIndex) => {
-              return renderListItems(listItemIndex, listItem);
-            })}
+            {obj.children.map((listItem, listItemIndex) =>
+              renderListItems(listItemIndex, listItem)
+            )}
           </ul>
         );
       case "image":
@@ -112,8 +107,7 @@ const PostDetail = ({ post }) => {
             </div>
           );
         } else {
-          // If obj is null, return the original text without modification
-          return text;
+          return text; // return original text if the object is null
         }
       default:
         return modifiedText;
@@ -128,7 +122,7 @@ const PostDetail = ({ post }) => {
           if (child.type === "list-item-child") {
             return getContentFragment(
               childIndex,
-              child.children[0].text,
+              child.children[0]?.text || "",
               child,
               child.type
             );
@@ -169,11 +163,11 @@ const PostDetail = ({ post }) => {
             </p>
           </div>
         </div>
-        <div class="w-full h-[1px] bg-gray-300" />
+        <div className="w-full h-[1px] bg-gray-300" />
         <div className="max-w-2xl font-serif">
           {storedPost.content.raw.children.map((typeObj, index) => {
             const children = typeObj.children.map((item, itemindex) =>
-              getContentFragment(itemindex, item.text, item)
+              getContentFragment(itemindex, item.text, item, item.type)
             );
 
             return getContentFragment(index, children, typeObj, typeObj.type);
