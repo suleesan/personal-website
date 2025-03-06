@@ -1,3 +1,4 @@
 node_modules
 .env
 /src/protected/
+/src/components/resume.js

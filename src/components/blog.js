@@ -33,35 +33,7 @@ export default function Blog() {
           </p>
           <p>Currently: </p>
           <div className="pl-5">
-            <p className="pb-2">
-              Reading{" "}
-              <a
-                className="italic text-primary-500 hover:underline-offset-1 hover:underline"
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://politicalscience.stanford.edu/publications/system-error-where-big-tech-went-wrong-and-how-we-can-reboot"
-              >
-                System Error
-              </a>
-              ,{" "}
-              <a
-                className="italic text-primary-500 hover:underline-offset-1 hover:underline"
-                href="https://www.amazon.com/Noise-Human-Judgment-Daniel-Kahneman/dp/0316451401"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Noise
-              </a>
-              , and{" "}
-              <a
-                className="italic text-primary-500 hover:underline-offset-1 hover:underline"
-                target="_blank"
-                href="https://www.amazon.com/What-Dog-Saw-Other-Adventures/dp/0316076201"
-                rel="noopener noreferrer"
-              >
-                What the Dog Saw
-              </a>
-            </p>
+            <p className="pb-2">Working on my senior recital!</p>
             <p className="pb-2">
               Taking a LOT of psychology courses this quarter. Excited!!
             </p>

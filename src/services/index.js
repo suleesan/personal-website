@@ -2,10 +2,10 @@ import { request, gql } from "graphql-request";
 
 const graphqlAPI = process.env.REACT_APP_GRAPHCMS_ENDPOINT;
 
-export const getPosts = async () => {
+export const getPosts = async (first = 100) => {
   const query = gql`
     query MyQuery {
-      postsConnection {
+      postsConnection(first: 100) {
         edges {
           node {
             createdAt
@@ -22,15 +22,12 @@ export const getPosts = async () => {
                 url
               }
             }
-            categories {
-              name
-              slug
-            }
           }
         }
       }
     }
   `;
+
   const results = await request(graphqlAPI, query);
   return results.postsConnection.edges;
 };
@@ -52,10 +49,6 @@ export const getPostDetails = async (slug) => {
           photo {
             url
           }
-        }
-        categories {
-          name
-          slug
         }
         content {
           raw

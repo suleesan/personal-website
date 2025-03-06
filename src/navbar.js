@@ -10,18 +10,14 @@ function Navbar() {
         aria-label="Global"
       >
         <div className="inset-0 z-10 w-full flex flex-row items-center justify-between py-4">
-          <img
-            src={logo}
-            alt={"logo depicting susan lee with a paper plane"}
-            className="w-40"
-          />
+          <Link to="/">
+            <img
+              src={logo}
+              alt={"logo depicting susan lee with a paper plane"}
+              className="w-40"
+            />
+          </Link>
           <div className="flex flex-row px-1.5">
-            <Link
-              to="/"
-              className="sm:mx-3 block rounded-lg px-2 py-1.5 text-base font-semibold leading-7 text-primary-500 hover:bg-gray-100"
-            >
-              Home
-            </Link>
             <Link
               to="/projects"
               className="sm:mx-3 block rounded-lg px-2 py-1.5 text-base font-semibold leading-7 text-primary-500 hover:bg-gray-100"
