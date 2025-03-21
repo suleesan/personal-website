@@ -33,10 +33,6 @@ export default function Blog() {
           </p>
           <p>Currently: </p>
           <div className="pl-5">
-            <p className="pb-2">Working on my senior recital!</p>
-            <p className="pb-2">
-              Taking a LOT of psychology courses this quarter. Excited!!
-            </p>
             <p className="pb-2">
               Working on projects, learnings, and new blog posts!
             </p>

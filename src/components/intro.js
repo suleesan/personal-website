@@ -85,7 +85,7 @@ export default function Intro() {
                 onClick={() =>
                   (window.location.href = "mailto:leesusan@stanford.edu")
                 }
-                className="text-primary-500"
+                className="text-primary-500 mt-0.5"
               >
                 <FiMail size={28} />
               </button>
