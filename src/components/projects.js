@@ -180,6 +180,65 @@ export default function Projects() {
 
   const musicProjects = [
     {
+      project: "Senior Violin Recital",
+      link: ["https://youtu.be/1qgSJApeouI?si=U_umKth77j66r8fp"],
+      description: (
+        <>
+          <p className="text-lg">
+            After a 3-year hiatus from the violin, I put together a recital for
+            my senior year! My repertoire was Tzigane, Franck Violin Sonata, and
+            Hubay's Carmen Fantaisie. You can read more about my thoughts{" "}
+            <a
+              className="text-primary-500"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.susanlee.dev/post/violin"
+            >
+              here
+            </a>
+            , but overall, I'm super happy how it turned out. I was admittedly
+            really nervous for this performance, but consistent practice,
+            reflection, and a lot of work on confronting and fixing my technique
+            paid off.
+          </p>
+          <p className="text-lg mt-4">
+            I was least familiar with Tzigane before this recital, and
+            impressionistic/contemporary music is a style I generally have a
+            hard time with. I'm glad I chose this piece because it was
+            uncomfortable and pushed my limits both stylistically and
+            technically (left-hand pizzicato is maybe my worst nightmare). I was
+            most familiar with Franck, yet I think this piece challenged me the
+            most emotionally. The 3rd and 4th movements were the hardest for me
+            in that regard, but I think I grew a lot; I sat with many emotions
+            and learned to add more emotional depth to my playing through this
+            piece. Finally, I added Carmen to balance out the recital. Despite
+            many famous violin renditions of the opera, Hubay's version isn't
+            commonly played, and I wanted to include a piece less standard to
+            the usual violin repertoire. This was the most technically demanding
+            piece of the recital, and since it came at the end of the recital, I
+            really struggled the most with stamina for this piece. This piece
+            taught me the most about patience.
+          </p>
+          <p className="text-lg mt-4">
+            This is the most fulfilling project I've completed during college. I
+            learned a lot; consistency, honest confrontations with myself about
+            my playing, vulnerability and maturity regarding emotions, patience
+            for memorizing and getting passages to settle in my fingers,
+            figuring out a good balance for a recital repertoire, understanding
+            the stories of each piece and adding my own interpretations to them,
+            listening (to myself, my amazing teacher Robin Sharp, and my
+            wonderful pianist Lori Lack), taking feedback graciously and
+            applying it to my playing, seeking diverse sources of feedback (I
+            went to the SF Opera to actually watch Carmen as my playing of the
+            melody should reflect the story and the voice as an instrument.
+            Also, I participated in a masterclass for the 3rd movement of
+            Franck), and of course, happiness. Playing is a gift!
+          </p>
+        </>
+      ),
+      images: [],
+    },
+    {
       project: "Pokemon Gold/Silver/Crystal Violin Cover",
       link: ["https://youtu.be/fUDsSFXgPqQ?si=dVLjqvXTnfHX_0Jf"],
       description: (
