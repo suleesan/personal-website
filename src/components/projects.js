@@ -13,6 +13,8 @@ import KindKitchen2 from "../images/projects/KindKitchen 18.25.56.png";
 import KindKitchen3 from "../images/projects/KindKitchen 18.26.04.png";
 import KindKitchen4 from "../images/projects/KindKitchen 18.26.24.png";
 import CourseCalendar from "../images/projects/CourseCalendar.png";
+import Violin from "../images/projects/Susan Lee Violin 2.jpg";
+import Violin2 from "../images/projects/susan lee recital flyer.png";
 
 function Icon({ id, open }) {
   return (
@@ -236,7 +238,7 @@ export default function Projects() {
           </p>
         </>
       ),
-      images: [],
+      images: [Violin, Violin2],
     },
     {
       project: "Pokemon Gold/Silver/Crystal Violin Cover",
