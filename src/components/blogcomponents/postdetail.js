@@ -3,181 +3,163 @@ import { useParams } from "react-router-dom";
 import { getPostDetails } from "../../services";
 import moment from "moment";
 
-// the actual article layout
 const PostDetail = ({ post }) => {
   const { slug } = useParams();
   const [storedPost, setStoredPost] = useState(post);
 
-  async function fetchData() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    if (!post) fetchData();
+  }, []);
+
+  const fetchData = async () => {
     try {
       const data = await getPostDetails(slug);
       setStoredPost(data);
     } catch (error) {
       console.error("Error fetching post details", error);
     }
-  }
+  };
 
-  useEffect(() => {
-    window.scrollTo(0, 0); // fix bug where post opens to the middle of the page...?
-    fetchData();
-  }, []);
+  const renderText = (text, obj = {}) => {
+    let content = text;
 
-  const getContentFragment = (index, text, obj, type) => {
-    let modifiedText = text;
+    if (obj.bold) content = <b>{content}</b>;
+    if (obj.italic) content = <em>{content}</em>;
+    if (obj.underline) content = <u>{content}</u>;
 
-    if (obj.bold) modifiedText = <b key={index}>{text}</b>;
-    if (obj.italic) modifiedText = <em key={index}>{text}</em>;
-    if (obj.underline) modifiedText = <u key={index}>{text}</u>;
+    return content;
+  };
 
-    // hrefs
-    if (obj && obj.type === "link" && obj.href) {
-      return (
-        <a
-          key={index}
-          href={obj.href}
-          target={"_blank"}
-          rel="noopener noreferrer"
-          className="text-blue-500 underline"
-        >
-          {obj.children[0]?.text || "Link"}
-        </a>
-      );
-    }
+  const renderChildren = (children) => {
+    return children.map((child, index) => {
+      if (child.type === "link" && child.href) {
+        return (
+          <a
+            key={index}
+            href={child.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 underline"
+          >
+            {renderChildren(child.children || [])}
+          </a>
+        );
+      }
 
-    // Handle different types
-    switch (type) {
+      if (child.text !== undefined) {
+        return (
+          <React.Fragment key={index}>
+            {renderText(child.text, child)}
+          </React.Fragment>
+        );
+      }
+
+      // Handle nested blocks like list-item, paragraph, etc.
+      return getContentFragment(child, index);
+    });
+  };
+
+  const getContentFragment = (obj, index) => {
+    const children = renderChildren(obj.children || []);
+
+    switch (obj.type) {
       case "heading-three":
         return (
           <h3 key={index} className="text-xl font-semibold mb-4">
-            {modifiedText}
+            {children}
           </h3>
-        );
-      case "paragraph":
-        return (
-          <p key={index} className="mt-6">
-            {modifiedText}
-          </p>
         );
       case "heading-four":
         return (
           <h4 key={index} className="text-md font-semibold mb-4">
-            {modifiedText}
+            {children}
           </h4>
         );
-      case "numbered-list":
+      case "paragraph":
         return (
-          <ol key={index} className="list-decimal ml-8 mb-8">
-            {obj.children.map((listItem, listItemIndex) =>
-              renderListItems(listItemIndex, listItem)
-            )}
-          </ol>
+          <p key={index} className="mt-6 leading-relaxed">
+            {children}
+          </p>
         );
       case "bulleted-list":
         return (
-          <ul key={index} className="list-disc ml-8 mb-8">
-            {obj.children.map((listItem, listItemIndex) =>
-              renderListItems(listItemIndex, listItem)
-            )}
+          <ul key={index} className="list-disc ml-8 mb-4">
+            {obj.children.map((item, idx) => getContentFragment(item, idx))}
           </ul>
         );
+      case "numbered-list":
+        return (
+          <ol key={index} className="list-decimal ml-8 mb-4">
+            {obj.children.map((item, idx) => getContentFragment(item, idx))}
+          </ol>
+        );
+      case "list-item":
+        return (
+          <li key={index} className="mb-2">
+            {renderChildren(obj.children)}
+          </li>
+        );
       case "image":
-        if (obj) {
-          return (
-            <div
-              key={index}
+        return (
+          <div
+            key={index}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              margin: "20px 0",
+            }}
+          >
+            <img
+              alt={obj.title || "image"}
+              src={obj.src}
               style={{
-                display: "flex",
-                justifyContent: "center",
-                margin: "20px 0",
+                maxWidth: "400px",
+                maxHeight: "400px",
+                width: "auto",
+                height: "auto",
+                objectFit: "contain",
               }}
-            >
-              <img
-                alt={obj.title}
-                style={{
-                  maxWidth: "400px",
-                  maxHeight: "400px",
-                  width: "auto",
-                  height: "auto",
-                  objectFit: "contain",
-                }}
-                src={obj.src}
-              />
-            </div>
-          );
-        } else {
-          return text; // return original text if the object is null
-        }
+            />
+          </div>
+        );
       default:
-        return modifiedText;
+        return <span key={index}>{children}</span>;
     }
   };
 
-  const renderListItems = (index, listItem) => {
-    // rendering for nested list-item structures
+  if (!storedPost) {
     return (
-      <li key={index} className="mb-4">
-        {listItem.children.map((child, childIndex) => {
-          if (child.type === "list-item-child") {
-            return getContentFragment(
-              childIndex,
-              child.children[0]?.text || "",
-              child,
-              child.type
-            );
-          } else {
-            return getContentFragment(
-              childIndex,
-              child.text,
-              child,
-              child.type
-            );
-          }
-        })}
-      </li>
-    );
-  };
-
-  if (storedPost) {
-    return (
-      <div className="flex flex-col mt-16 mb-16 max-w-4xl mx-auto">
-        <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-primary-500">
-          {storedPost.title}
-        </h2>
-        <div className="my-4 flex flex-row items-center gap-4">
-          <img
-            alt={storedPost.author.name}
-            src={storedPost.author.photo.url}
-            style={{
-              height: "50px",
-              width: "50px",
-              borderRadius: "50%",
-              objectFit: "cover",
-            }}
-          />
-          <div>
-            <p className="text-sm sm:text-l">{storedPost.author.name}</p>
-            <p className="text-xs sm:text-m text-gray-700">
-              {moment(storedPost.createdAt).format("MMM DD, YYYY")}
-            </p>
-          </div>
-        </div>
-        <div className="w-full h-[1px] bg-gray-300" />
-        <div className="max-w-2xl font-serif">
-          {storedPost.content.raw.children.map((typeObj, index) => {
-            const children = typeObj.children.map((item, itemindex) =>
-              getContentFragment(itemindex, item.text, item, item.type)
-            );
-
-            return getContentFragment(index, children, typeObj, typeObj.type);
-          })}
-        </div>
+      <div className="flex items-center justify-center h-screen">
+        <p>Loading...</p>
       </div>
     );
   }
 
   return (
-    <div className="flex items-center justify-center h-screen">
-      <p>Loading...</p>
+    <div className="flex flex-col mt-16 mb-16 max-w-4xl mx-auto">
+      <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-primary-500">
+        {storedPost.title}
+      </h2>
+      <div className="my-4 flex flex-row items-center gap-4">
+        <img
+          alt={storedPost.author.name}
+          src={storedPost.author.photo.url}
+          className="h-[50px] w-[50px] rounded-full object-cover"
+        />
+        <div>
+          <p className="text-sm sm:text-l">{storedPost.author.name}</p>
+          <p className="text-xs sm:text-m text-gray-700">
+            {moment(storedPost.createdAt).format("MMM DD, YYYY")}
+          </p>
+        </div>
+      </div>
+      <div className="w-full h-[1px] bg-gray-300" />
+      <div className="max-w-2xl font-serif">
+        {storedPost.content.raw.children.map((block, index) =>
+          getContentFragment(block, index)
+        )}
+      </div>
     </div>
   );
 };
