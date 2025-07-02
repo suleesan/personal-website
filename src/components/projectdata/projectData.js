@@ -260,7 +260,7 @@ export const musicProjects = [
     images: [],
   },
   {
-    project: "Howl's Moving Castle Violin and Piano Cover (2020)",
+    project: "Howl's Moving Castle Violin and Piano Cover",
     link: ["https://youtu.be/imgXrUz7hso?si=FiyEmBLfbnlXUldU"],
     description: (
       <p>
@@ -270,6 +270,23 @@ export const musicProjects = [
         parts, and edited them for accuracy to create this cover. Fun fact: I
         tuned my G string down to an F for one of the cuts (one of my FAVORITE
         parts of the piece). Can you find it?
+      </p>
+    ),
+    images: [],
+  },
+  {
+    project: "Your Lie in April Chopin Ballade No. 1 Violin/Piano Cover (2020)",
+    link: ["https://youtu.be/-yIUO15h3zY?si=dzwuWgRCOsRuBx2B"],
+    description: (
+      <p>
+        Also recorded in 2020 (I had a lot of time on my hands). I think this
+        one was the most difficult one I put together as I am a much better
+        violinist than I am a pianist. I learned the entirety of Chopin's
+        Ballade on my own to make this cover, but chose to only record the
+        excerpt with the violin (coincidentally also my favorite part of the
+        original piano piece as well). Learning the piano part was definitely
+        the hardest part of this project. While not perfect, I loved making
+        this!
       </p>
     ),
     images: [],
