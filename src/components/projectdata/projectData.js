@@ -14,6 +14,9 @@ import KindKitchen4 from "./projectImages/KindKitchen 18.26.24.png";
 import CourseCalendar from "./projectImages/CourseCalendar.png";
 import Violin from "./projectImages/Susan Lee Violin 2.jpg";
 import Violin2 from "./projectImages/susan lee recital flyer.png";
+import rally1 from "./projectImages/rally1.png";
+import rally2 from "./projectImages/rally2.png";
+import rally3 from "./projectImages/rally3.png";
 
 export const projects = [
   {
@@ -135,6 +138,25 @@ export const projects = [
     ),
     images: [CourseCalendar],
   },
+  {
+    project: "Rally",
+    link: [
+      "https://bucket-list-sigma.vercel.app/",
+      "https://github.com/suleesan/bucket-list",
+    ],
+    description: (
+      <p>
+        Rally is a social bucket list planner meant for friend groups. My
+        friends and I built this app with React and Supabase for CS 278, where
+        we focused on the social interactions aspect of the application the
+        most. Users can join/create groups with their friends and add bucket
+        list events/items (whether it's actually planned or just an idea),
+        "rally" to each event, message with their group on each event, and
+        customize each item with an image, description, and other details.
+      </p>
+    ),
+    images: [rally1, rally2, rally3],
+  },
 ];
 
 export const musicProjects = [
@@ -198,6 +220,21 @@ export const musicProjects = [
     images: [Violin, Violin2],
   },
   {
+    project: "Your Lie in April Chopin Ballade No. 1 Violin/Piano Cover (2025)",
+    link: ["https://www.youtube.com/watch?v=IUKhyTubn34&ab_channel=SusanLee"],
+    description: (
+      <p>
+        I made a new version of my original cover of the piece with my friend
+        Charlie! He is a MUCH better pianist than I am of course, so this was
+        really fun to collaborate on. It's not perfect (we rushed to put this
+        together before school ended) and has a lot more room for better
+        expression and improvement, but this definitely reignited my desire to
+        partcipate in chamber music; collaboration is such a joy in music.
+      </p>
+    ),
+    images: [],
+  },
+  {
     project: "Pokemon Gold/Silver/Crystal Violin Cover",
     link: ["https://youtu.be/fUDsSFXgPqQ?si=dVLjqvXTnfHX_0Jf"],
     description: (
@@ -223,7 +260,7 @@ export const musicProjects = [
     images: [],
   },
   {
-    project: "Howl's Moving Castle Violin and Piano Cover",
+    project: "Howl's Moving Castle Violin and Piano Cover (2020)",
     link: ["https://youtu.be/imgXrUz7hso?si=FiyEmBLfbnlXUldU"],
     description: (
       <p>
@@ -233,23 +270,6 @@ export const musicProjects = [
         parts, and edited them for accuracy to create this cover. Fun fact: I
         tuned my G string down to an F for one of the cuts (one of my FAVORITE
         parts of the piece). Can you find it?
-      </p>
-    ),
-    images: [],
-  },
-  {
-    project: "Your Lie in April Chopin Ballade No. 1 Violin/Piano Cover",
-    link: ["https://youtu.be/-yIUO15h3zY?si=dzwuWgRCOsRuBx2B"],
-    description: (
-      <p>
-        Also recorded in 2020 (I had a lot of time on my hands). I think this
-        one was the most difficult one I put together as I am a much better
-        violinist than I am a pianist. I learned the entirety of Chopin's
-        Ballade on my own to make this cover, but chose to only record the
-        excerpt with the violin (coincidentally also my favorite part of the
-        original piano piece as well). Learning the piano part was definitely
-        the hardest part of this project. While not perfect, I loved making
-        this!
       </p>
     ),
     images: [],
