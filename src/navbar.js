@@ -24,12 +24,12 @@ function Navbar() {
             >
               Projects
             </Link>
-            <Link
+            {/* <Link
               to="/blog"
               className="sm:mx-3 block rounded-lg px-2 py-1.5 text-base font-semibold leading-7 text-primary-500 hover:bg-gray-100"
             >
               Blog
-            </Link>
+            </Link> */}
             <Link
               to="/playground"
               className="sm:mx-3 block rounded-lg px-2 py-1.5 text-base font-semibold leading-7 text-primary-500 hover:bg-gray-100"
