@@ -19,11 +19,11 @@ function useInterval(callback, delay) {
 
 const TypewriterCycle = ({
   words,
-  timePerChar = 50,
-  deleteSpeed = 30,
-  delayBeforeDelete = 1500,
-  showCarat = true,
-  className = "",
+  timePerChar,
+  deleteSpeed,
+  delayBeforeDelete,
+  showCarat,
+  className,
 }) => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");

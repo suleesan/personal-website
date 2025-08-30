@@ -1,5 +1,5 @@
 import React from "react";
-import { Typewriter, Carousel } from "./playgroundcomponents";
+import { Typewriter, Carousel, RetroWindow } from "./playgroundcomponents";
 
 export default function Playground() {
   return (
@@ -14,8 +14,7 @@ export default function Playground() {
           </p>
         </div>
         <div className="space-y-10">
-          <Typewriter />
-          <Carousel />
+          <RetroWindow />
         </div>
       </div>
     </div>

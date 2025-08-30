@@ -137,7 +137,7 @@ const PostDetail = ({ post }) => {
   }
 
   return (
-    <div className="flex flex-col mt-16 mb-16 max-w-4xl mx-auto">
+    <div className="flex flex-col mt-16 mb-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-primary-500">
         {storedPost.title}
       </h2>
