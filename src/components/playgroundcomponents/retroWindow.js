@@ -8,7 +8,7 @@ import DraggableImage from "./draggableImage";
 const RetroWindow = () => {
   return (
     <div className="flex flex-col items-center justify-center">
-      <Window title="Image Viewer" width={600} draggable={true}>
+      <Window title="Image Viewer" width={700} height={500} draggable={true}>
         <DraggableImage
           src={stanford1}
           alt="Draggable Image of Stanford 1"
