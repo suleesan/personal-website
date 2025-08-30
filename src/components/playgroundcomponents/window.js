@@ -40,9 +40,14 @@ function Window({
 
   const actionButtons = getActionButtons();
 
-  // clone children and pass containerRef to DraggableImage components
+  // Clone children and pass containerRef to DraggableImage components
   const childrenWithRef = React.Children.map(children, (child) => {
-    if (React.isValidElement(child) && child.type?.name === "DraggableImage") {
+    if (
+      React.isValidElement(child) &&
+      (child.type?.name === "DraggableImage" ||
+        child.type?.displayName === "DraggableImage" ||
+        child.type?.toString().includes("DraggableImage"))
+    ) {
       return React.cloneElement(child, { containerRef: bodyRef });
     }
     return child;

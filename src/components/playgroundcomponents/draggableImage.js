@@ -9,6 +9,11 @@ function DraggableImage({
   containerRef, // must point at a relatively-positioned container
   ...props
 }) {
+  console.log("DraggableImage render:", {
+    containerRef: !!containerRef,
+    containerRefCurrent: !!containerRef?.current,
+  });
+
   const [position, setPosition] = useState({ x: initialX, y: initialY });
   const [dragging, setDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 }); // mouse-to-image offset within container coords
@@ -17,9 +22,15 @@ function DraggableImage({
 
   const handleMouseDown = (e) => {
     e.preventDefault();
-    if (!containerRef?.current) return;
+    if (!containerRef?.current) {
+      console.log("DraggableImage: containerRef not available", {
+        containerRef,
+      });
+      return;
+    }
 
     const containerRect = containerRef.current.getBoundingClientRect();
+    console.log("DraggableImage: containerRect", containerRect);
 
     // Convert mouse position to container space, then compute offset from image's top-left
     const mouseX = e.clientX - containerRect.left;
@@ -93,5 +104,7 @@ function DraggableImage({
     />
   );
 }
+
+DraggableImage.displayName = "DraggableImage";
 
 export default DraggableImage;
