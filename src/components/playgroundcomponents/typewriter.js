@@ -17,7 +17,7 @@ function useInterval(callback, delay) {
   }, [delay]);
 }
 
-export const TypewriterCycle = ({
+const TypewriterCycle = ({
   words,
   timePerChar = 50,
   deleteSpeed = 30,

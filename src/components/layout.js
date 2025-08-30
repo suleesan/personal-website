@@ -1,12 +1,14 @@
 import React from "react";
-import {Outlet} from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Navbar from "../navbar";
+import PokeballCursor from "./playgroundcomponents/pokeballCursor";
 
 const Layout = () => {
   return (
     <div className="flex flex-col">
       <Navbar />
       <Outlet />
+      <PokeballCursor />
     </div>
   );
 };

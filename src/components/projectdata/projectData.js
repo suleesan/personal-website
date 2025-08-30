@@ -209,11 +209,8 @@ export const musicProjects = [
           each piece and adding my own interpretations to them, listening (to
           myself, my amazing teacher Robin Sharp, and my wonderful pianist Lori
           Lack), taking feedback graciously and applying it to my playing,
-          seeking diverse sources of feedback (I went to the SF Opera to
-          actually watch Carmen as my playing of the melody should reflect the
-          story and the voice as an instrument. Also, I participated in a
-          masterclass for the 3rd movement of Franck), and of course, happiness.
-          Playing is a gift!
+          seeking diverse sources of feedback (masterclass, watching Carmen at
+          the SF Opera), and of course, happiness. Playing is a gift!
         </p>
       </>
     ),
@@ -287,6 +284,17 @@ export const musicProjects = [
         original piano piece as well). Learning the piano part was definitely
         the hardest part of this project. While not perfect, I loved making
         this!
+      </p>
+    ),
+    images: [],
+  },
+  {
+    project: "Kirby Green Greens Piano",
+    link: ["https://www.youtube.com/watch?v=t79omq-COMY&ab_channel=SusanLee"],
+    description: (
+      <p>
+        I think I just made this purely for fun: it's very low-effort. This
+        melody is so nostalgic to me though.
       </p>
     ),
     images: [],
