@@ -1,10 +1,26 @@
 import { Link } from "react-router-dom";
-import { React } from "react";
+import { React, useState, useEffect } from "react";
 import logo from "./images/logo.svg";
 
 function Navbar() {
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setHasScrolled(scrollTop > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header>
+    <header
+      className={`sticky top-0 z-50 transition-all duration-200 ${
+        hasScrolled ? "bg-white/90 backdrop-blur-sm border-b shadow-sm" : ""
+      }`}
+    >
       <nav
         className="z-10 flex w-full flex-row justify-between lg:px-8"
         aria-label="Global"
