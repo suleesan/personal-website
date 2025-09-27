@@ -96,6 +96,4 @@ function DraggableImage({
   );
 }
 
-DraggableImage.displayName = "DraggableImage";
-
 export default DraggableImage;

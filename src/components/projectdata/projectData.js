@@ -217,6 +217,16 @@ export const musicProjects = [
     images: [Violin, Violin2],
   },
   {
+    project: "Hubay Carmen Fantaisie",
+    link: ["https://www.youtube.com/watch?v=u6OVcT1bnbs&ab_channel=SusanLee"],
+    description: (
+      <p>
+        An official recording of Hubay's Carmen Fantaisie. Find other recordings
+        on my channel!
+      </p>
+    ),
+  },
+  {
     project: "Your Lie in April Chopin Ballade No. 1 Violin/Piano Cover (2025)",
     link: ["https://www.youtube.com/watch?v=IUKhyTubn34&ab_channel=SusanLee"],
     description: (

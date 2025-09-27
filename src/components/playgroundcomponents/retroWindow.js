@@ -8,25 +8,25 @@ import DraggableImage from "./draggableImage";
 const RetroWindow = () => {
   return (
     <div className="flex flex-col items-center justify-center">
-      <Window title="Image Viewer" width={700} height={500} draggable={true}>
+      <Window title="Viewer" width={700} height={500} draggable={true}>
         <DraggableImage
           src={stanford1}
           alt="Draggable Image of Stanford 1"
-          className="w-1/2"
+          className="w-1/3"
           initialX={50}
           initialY={50}
         />
         <DraggableImage
           src={stanford2}
           alt="Draggable Image of Stanford 2"
-          className="w-1/2"
+          className="w-1/3"
           initialX={150}
           initialY={150}
         />
         <DraggableImage
           src={stanford3}
           alt="Draggable"
-          className="w-1/2"
+          className="w-1/3"
           initialX={300}
           initialY={300}
         />

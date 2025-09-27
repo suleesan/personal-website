@@ -1,5 +1,6 @@
 import React from "react";
-import headshot from "../images/Susan Lee Casual.jpeg";
+// import headshot from "../images/Susan Lee Casual.jpeg";
+import headshot2 from "../images/Susan Lee Casual 2.jpg";
 import { FiLinkedin, FiMail } from "react-icons/fi";
 
 export default function Intro() {
@@ -93,7 +94,7 @@ export default function Intro() {
             </div>
           </div>
           <img
-            src={headshot}
+            src={headshot2}
             className="w-full sm:w-1/3 max-w-xs mt-12 rounded-lg aspect-square object-cover"
             alt="Headshot"
           />
