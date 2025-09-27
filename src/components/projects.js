@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { getProjects } from "../services";
+import { getContentFragment } from "../helpers";
 
-import { projects, musicProjects } from "./projectdata/projectData";
-
+// accordion icon
 function Icon({ id, open }) {
   return (
     <svg
@@ -20,8 +21,50 @@ function Icon({ id, open }) {
 }
 
 export default function Projects() {
+  const [projects, setProjects] = useState([]);
+  const [musicProjects, setMusicProjects] = useState([]);
   const [openIndexes, setOpenIndexes] = useState([]);
   const [openMusicIndexes, setOpenMusicIndexes] = useState([]); // For music projects
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const fetchedProjects = await getProjects();
+
+        // Transform GraphQL data to match the expected format
+        const transformedProjects = fetchedProjects.map((edge) => ({
+          project: edge.node.title,
+          description: edge.node.description.raw.children,
+          links:
+            edge.node.links && edge.node.links.includes(",")
+              ? edge.node.links.split(",")
+              : edge.node.links,
+          images: edge.node.images?.map((img) => img.url) || [],
+          musicProject: edge.node.musicProject,
+        }));
+
+        console.log(transformedProjects);
+
+        // Separate regular projects from music projects based on the boolean
+        const regularProjects = transformedProjects.filter(
+          (project) => !project.musicProject
+        );
+        const musicProjects = transformedProjects.filter(
+          (project) => project.musicProject
+        );
+
+        setProjects(regularProjects);
+        setMusicProjects(musicProjects);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching projects:", error);
+        setLoading(false);
+      }
+    }
+
+    fetchData();
+  }, []);
 
   const handleOpen = (index) => {
     setOpenIndexes((prevOpenIndexes) => {
@@ -42,6 +85,21 @@ export default function Projects() {
       }
     });
   };
+
+  if (loading) {
+    return (
+      <div className="flex flex-col mt-16 mx-6 sm:mx-24">
+        <div className="mx-auto max-w-2xl lg:mx-0 mb-10">
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-primary-500">
+            Projects
+          </h2>
+        </div>
+        <div className="flex items-center justify-center h-64">
+          <p>Loading projects...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col mt-16 mx-6 sm:mx-24">
@@ -64,12 +122,12 @@ export default function Projects() {
               >
                 <h2
                   className={`flex flex-row justify-between text-xl sm:text-2xl font-bold ${
-                    item.link ? "hover:text-primary-500" : ""
+                    item.links ? "hover:text-primary-500" : ""
                   }`}
                 >
-                  {item.link ? (
+                  {item.links ? (
                     <a
-                      href={item.link[0]}
+                      href={item.links[0]}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary-500 rounded-lg hover:px-2 hover:py-1.5 hover:bg-gray-100"
@@ -85,12 +143,14 @@ export default function Projects() {
               {openIndexes.includes(index) && (
                 <div className="overflow-hidden flex flex-row">
                   <div className="inline-block w-[50%] py-4 px-4 font-serif text-sm leading-normal">
-                    {item.description}
-                    {item.link && (
+                    {item.description.map((block, index) =>
+                      getContentFragment(block, index)
+                    )}
+                    {item.links && (
                       <p className="mt-2">
                         For the code, click{" "}
                         <a
-                          href={item.link[1]}
+                          href={item.links[1]}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-primary-500 hover:bg-gray-100 hover:px-1 rounded-lg"
@@ -105,12 +165,11 @@ export default function Projects() {
                     {item.images && (
                       <div className="flex flex-col sm:flex-row sm:flex-shrink">
                         {item.images.map((image, imageIndex) => (
-                          <div className="w-full max-w-sm mx-auto mt-2 px-2">
-                            <img
-                              key={imageIndex}
-                              src={image}
-                              alt="project images"
-                            />
+                          <div
+                            key={imageIndex}
+                            className="w-full max-w-sm mx-auto mt-2 px-2"
+                          >
+                            <img src={image} alt="project images" />
                           </div>
                         ))}
                       </div>
@@ -140,12 +199,12 @@ export default function Projects() {
               >
                 <h2
                   className={`flex flex-row justify-between text-xl sm:text-2xl font-bold ${
-                    item.link ? "hover:text-primary-500" : ""
+                    item.links ? "hover:text-primary-500" : ""
                   }`}
                 >
-                  {item.link ? (
+                  {item.links ? (
                     <a
-                      href={item.link[0]}
+                      href={item.links}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary-500 rounded-lg hover:px-2 hover:py-1.5 hover:bg-gray-100"
@@ -160,19 +219,20 @@ export default function Projects() {
               </button>
               {openMusicIndexes.includes(index) && (
                 <div className="overflow-hidden flex flex-row">
-                  <div className="w-[50%] inline-block py-4 px-4 text-sm leading-normal">
-                    <p className="font-serif">{item.description}</p>
+                  <div className="w-[50%] inline-block py-4 px-4 text-sm leading-normal font-serif">
+                    {item.description.map((block, index) =>
+                      getContentFragment(block, index)
+                    )}
                   </div>
                   <div className="w-[50%] py-4 px-4">
                     {item.images && (
                       <div className=" flex flex-col sm:flex-row sm:flex-shrink">
                         {item.images.map((image, imageIndex) => (
-                          <div className="w-full max-w-sm mx-auto px-2">
-                            <img
-                              key={imageIndex}
-                              src={image}
-                              alt="project images"
-                            />
+                          <div
+                            key={imageIndex}
+                            className="w-full max-w-sm mx-auto px-2"
+                          >
+                            <img src={image} alt="project images" />
                           </div>
                         ))}
                       </div>
