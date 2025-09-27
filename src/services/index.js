@@ -68,3 +68,29 @@ export const getPostDetails = async (slug) => {
     throw error;
   }
 };
+
+export const getProjects = async (first = 100) => {
+  const query = gql`
+    query GetProjects {
+      projects1Connection(first: 100) {
+        edges {
+          node {
+            createdAt
+            title
+            description {
+              raw
+            }
+            links
+            images {
+              url
+            }
+            musicProject
+          }
+        }
+      }
+    }
+  `;
+
+  const results = await request(graphqlAPI, query);
+  return results.projects1Connection.edges;
+};
