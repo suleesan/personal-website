@@ -9,6 +9,7 @@ function Envelope({ onTransitionComplete }) {
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
+    // show envelope
     const showTimer = setTimeout(() => {
       setIsVisible(true);
     }, 100);
@@ -23,7 +24,7 @@ function Envelope({ onTransitionComplete }) {
       setShowPikachu(true);
     }, 1400);
 
-    // Start transition to playground after Pikachu appears
+    // go to playground
     const transitionTimer = setTimeout(() => {
       setIsTransitioning(true);
       if (onTransitionComplete) {

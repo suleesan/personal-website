@@ -40,6 +40,7 @@ const PokeballCursor = () => {
       const target = e.target;
       const computedStyle = window.getComputedStyle(target);
 
+      // correctly detect if element is interactive --> pokeball opens
       const isInteractive =
         target.tagName === "BUTTON" ||
         target.tagName === "A" ||
