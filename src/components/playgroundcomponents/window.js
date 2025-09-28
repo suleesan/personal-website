@@ -58,7 +58,7 @@ function Window({
       className={`relative select-none ${className || ""}`}
       style={{ width }}
     >
-      <div className="bg-[#FFFCEB] border-[3px] border-black rounded-lg shadow-[15px_15px_20px_rgba(0,0,0,0.25)] overflow-hidden">
+      <div className="bg-[#FFFCEB] border-[3px] border-black rounded-md shadow-[15px_15px_20px_rgba(0,0,0,0.25)] overflow-hidden">
         <div className="bg-[#93C0FF] border-b-[3px] border-black px-3 py-2 flex items-center justify-between min-h-[50px]">
           <div className="text-xl font-bold text-black whitespace-nowrap overflow-hidden text-ellipsis flex-1">
             {title}

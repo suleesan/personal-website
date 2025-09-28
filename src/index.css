@@ -15,3 +15,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.stamp-border {
+  padding: 20px;
+  background: white;
+  mask: 
+    radial-gradient(50% 50%,#0000 66%,#000 67%) round 
+     16px 16px/calc(2*16px) calc(2*16px), 
+    conic-gradient(#000 0 0) content-box;
+}

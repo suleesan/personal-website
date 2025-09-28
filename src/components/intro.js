@@ -93,11 +93,13 @@ export default function Intro() {
               </button>
             </div>
           </div>
-          <img
-            src={headshot2}
-            className="w-full sm:w-1/3 max-w-xs mt-12 rounded-lg aspect-square object-cover"
-            alt="Headshot"
-          />
+          <div className="w-full sm:w-1/3 max-w-xs mt-12 stamp-border">
+            <img
+              src={headshot2}
+              className=" rounded-sm aspect-square object-cover"
+              alt="Headshot"
+            />
+          </div>
         </div>
         <div
           className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
