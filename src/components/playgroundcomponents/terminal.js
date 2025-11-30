@@ -5,6 +5,8 @@ const Terminal = ({
   onClose,
   titleColor = "var(--color-pokemon-yellow)",
   bodyColor = "var(--color-pokemon-black)",
+  titleFont,
+  bodyFont,
   onDragStart,
   isDragging,
   spanColor = "var(--color-pokemon-yellow)",
@@ -209,6 +211,8 @@ const Terminal = ({
       height={height}
       titleColor={titleColor}
       bodyColor={bodyColor}
+      titleFont={titleFont}
+      bodyFont={bodyFont}
       onCloseClick={onClose}
       onDragStart={onDragStart}
       isDragging={isDragging}
@@ -216,7 +220,7 @@ const Terminal = ({
       <div
         ref={terminalRef}
         className="flex flex-col gap-2 text-sm p-4 overflow-y-auto"
-        style={{ height: "100%", fontFamily: "monospace" }}
+        style={{ height: "100%", fontFamily: bodyFont }}
       >
         {commandHistory.map((item, index) => (
           <div key={index} className="flex flex-col gap-1">

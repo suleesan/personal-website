@@ -106,11 +106,11 @@ const ThemeBackground = ({
     >
       {/* menu bar*/}
       <div className="absolute top-0 left-0 right-0 z-50 bg-white/30 backdrop-blur-sm">
-        <div className="flex items-center justify-between px-4 py-2">
+        <div className="flex items-center justify-between px-4 py-[1px]">
           <div className="relative" ref={menuRef}>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="px-4 py-2 hover:bg-white/30 font-medium"
+              className="px-4 py-[0.5px] hover:bg-white/30 font-medium"
               style={{ fontFamily: themeConfig.titleFont }}
             >
               Toggle Theme
@@ -118,12 +118,12 @@ const ThemeBackground = ({
 
             {/* theme menu */}
             {isMenuOpen && (
-              <div className="absolute left-0 mt-2 bg-white/70 backdrop-blur-md shadow-2xl min-w-[150px] overflow-hidden">
+              <div className="absolute left-0 bg-white/30 backdrop-blur-md shadow-2xl min-w-[150px] overflow-hidden">
                 {availableThemes.map((themeName) => (
                   <button
                     key={themeName}
                     onClick={() => handleThemeSelect(themeName)}
-                    className={`w-full text-left px-4 py-3  hover:bg-white/20 transition-colors ${
+                    className={`w-full text-left px-4 py-1  hover:bg-white/20 transition-colors ${
                       currentTheme === themeName ? "bg-white/30" : ""
                     }`}
                     style={{ fontFamily: themeConfig.titleFont }}
@@ -147,7 +147,7 @@ const ThemeBackground = ({
           key={iconConfig.id}
           image={iconConfig.image}
           caption={iconConfig.caption}
-          font={themeConfig.font}
+          font={iconConfig.font || themeConfig.titleFont}
           height="50px"
           width="50px"
           initialX={iconConfig.initialX}

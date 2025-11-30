@@ -5,6 +5,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap');
 @import url('//cdn.jsdelivr.net/gh/neodgm/neodgm-webfont@1.600/neodgm/style.css');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
 
 :root {
   --color-pokemon-red: #F06D57;
@@ -16,6 +19,16 @@
   --color-pokemon-yellow: #FFCA02;
   --font-pokemon: "NeoDunggeunmo", "neodgm", "Source Code Pro", "Courier New", monospace, sans-serif;
   --font-pokemon-body: "Source Code Pro", "Courier New", monospace, sans-serif;
+  --color-sailor-moon-blue: #61B9C7;
+  --color-sailor-moon-darkblue: #0A3A8F;
+  --color-sailor-moon-gold: #F1A81A;
+  --color-sailor-moon-red: #B90E03;
+  --color-sailor-moon-pink: #F7CDDB;
+  --color-sailor-moon-darkpink: #EB69B0;
+  --color-sailor-moon-purple: #632C64;
+  --color-sailor-moon-cat: #40343F;
+  --font-sailor-moon: "Sacramento", "Fredoka", "Poppins", sans-serif;
+  --font-sailor-moon-body: "Fredoka", "Poppins", sans-serif;
 }
 
 body {

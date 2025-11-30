@@ -12,6 +12,8 @@ const PhotoWindow = ({
   onClose,
   titleColor = "var(--color-pokemon-red)",
   bodyColor = "var(--color-pokemon-white)",
+  titleFont,
+  bodyFont,
   onDragStart,
   isDragging,
 }) => {
@@ -23,6 +25,8 @@ const PhotoWindow = ({
       height={450}
       titleColor={titleColor}
       bodyColor={bodyColor}
+      titleFont={titleFont}
+      bodyFont={bodyFont}
       onCloseClick={onClose}
       onDragStart={onDragStart}
       isDragging={isDragging}

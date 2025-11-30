@@ -6,6 +6,8 @@ const SpotifyWindow = ({
   onClose,
   titleColor = "var(--color-pokemon-green)",
   bodyColor = "var(--color-pokemon-black)",
+  titleFont,
+  bodyFont,
   onDragStart,
   isDragging,
 }) => {
@@ -17,6 +19,8 @@ const SpotifyWindow = ({
       height={250}
       titleColor={titleColor}
       bodyColor={bodyColor}
+      titleFont={titleFont}
+      bodyFont={bodyFont}
       onCloseClick={onClose}
       onDragStart={onDragStart}
       isDragging={isDragging}
