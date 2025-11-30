@@ -8,8 +8,8 @@ const Layout = () => {
     <div className="flex flex-col">
       <Navbar />
       <Outlet />
-      <PokeballCursor />{" "}
       {/* needed because pokeball cursor needs to work with the navbar as well */}
+      <PokeballCursor />
     </div>
   );
 };

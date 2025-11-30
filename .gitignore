@@ -2,3 +2,8 @@ node_modules
 .env
 /src/protected/
 /src/components/resume.js
+get-spotify-token.js
+update-playlist.js
+server/spotifyServer.js
+.vercel
+.env*.local
