@@ -20,7 +20,7 @@ const SpotifyTopTracks = ({
         setStatus("loading");
         const topTracks = await fetchTopTracks({
           range: "medium_term",
-          limit: 5,
+          limit: 10,
         });
 
         if (!isMounted) return;
@@ -56,7 +56,7 @@ const SpotifyTopTracks = ({
     <div>
       {status === "loading" && (
         <div className="space-y-4">
-          {[...Array(5)].map((_, i) => (
+          {[...Array(10)].map((_, i) => (
             <div
               key={i}
               className="h-20 bg-neutral-800/60 rounded-lg animate-pulse"

@@ -13,7 +13,7 @@ const SpotifyWindow = ({
 }) => {
   return (
     <Window
-      title="Spotify Top 5 Tracks"
+      title="Spotify Top Tracks"
       actions={["close"]}
       width={600}
       height={250}

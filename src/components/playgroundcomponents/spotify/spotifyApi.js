@@ -2,11 +2,11 @@ const API_BASE_URL = process.env.REACT_APP_SPOTIFY_API_BASE_URL || "";
 
 export async function fetchTopTracks({
   range = "medium_term",
-  limit = 5,
+  limit = 10,
 } = {}) {
   const params = new URLSearchParams({
     range,
-    limit: Math.min(limit, 5).toString(),
+    limit: Math.min(limit, 10).toString(),
   });
 
   const url = API_BASE_URL

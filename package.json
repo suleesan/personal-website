@@ -34,6 +34,7 @@
     "spotify:get-refresh": "node get-spotify-token.js",
     "spotify:update-playlist": "node update-playlist.js"
   },
+  "proxy": "http://localhost:8888",
   "eslintConfig": {
     "extends": [
       "react-app",
