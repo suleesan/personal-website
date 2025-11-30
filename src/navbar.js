@@ -17,7 +17,7 @@ function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-200 ${
+      className={`sticky top-0 z-[9999] transition-all duration-200 ${
         hasScrolled ? "bg-white/90 backdrop-blur-sm border-b shadow-sm" : ""
       }`}
     >

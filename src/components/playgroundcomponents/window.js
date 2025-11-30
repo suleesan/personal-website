@@ -11,8 +11,15 @@ function Window({
   onMoreClick,
   onCloseClick,
   children,
+  titleColor = "#93C0FF",
+  bodyColor = "#FFFCEB",
+  onDragStart,
+  isDragging = false,
+  titleFont = "var(--font-pokemon)",
+  bodyFont = "var(--font-pokemon-body)",
 }) {
   const bodyRef = useRef(null);
+  const titleBarRef = useRef(null);
 
   const getActionButtons = () => {
     const buttonConfigs = [];
@@ -20,7 +27,7 @@ function Window({
     if (actions.includes("more")) {
       buttonConfigs.push({
         key: "more",
-        node: <MoreButton className="w-full h-full" />,
+        node: <MoreButton className="w-[80%] h-[80%]" />,
         onClick: onMoreClick,
         title: "More",
       });
@@ -29,7 +36,7 @@ function Window({
     if (actions.includes("close")) {
       buttonConfigs.push({
         key: "close",
-        node: <CloseButton className="w-full h-full" />,
+        node: <CloseButton className="w-[80%] h-[80%]" />,
         onClick: onCloseClick,
         title: "Close",
       });
@@ -58,9 +65,34 @@ function Window({
       className={`relative select-none ${className || ""}`}
       style={{ width }}
     >
-      <div className="bg-[#FFFCEB] border-[3px] border-black rounded-md shadow-[15px_15px_20px_rgba(0,0,0,0.25)] overflow-hidden">
-        <div className="bg-[#93C0FF] border-b-[3px] border-black px-3 py-2 flex items-center justify-between min-h-[50px]">
-          <div className="text-xl font-bold text-black whitespace-nowrap overflow-hidden text-ellipsis flex-1">
+      <div className="border-[1px] border-black shadow-[15px_15px_15px_15px_rgba(0,0,0,0.25)] overflow-hidden">
+        {/* title */}
+        <div
+          ref={titleBarRef}
+          onMouseDown={(e) => {
+            // Don't start dragging if clicking on buttons
+            if (e.target.tagName === "BUTTON" || e.target.closest("button")) {
+              return;
+            }
+            if (onDragStart) {
+              onDragStart(e);
+            }
+          }}
+          className="border-b-[1px] border-black px-3 py-2 flex items-center justify-between min-h-[20px]"
+          style={{
+            backgroundColor: titleColor,
+            cursor: onDragStart
+              ? isDragging
+                ? "grabbing"
+                : "grab"
+              : "default",
+            userSelect: "none",
+          }}
+        >
+          <div
+            className="text-l text-black whitespace-nowrap overflow-hidden text-ellipsis flex-1"
+            style={{ fontFamily: titleFont }}
+          >
             {title}
           </div>
           <div className="flex items-center gap-4">
@@ -70,17 +102,18 @@ function Window({
                 type="button"
                 onClick={onClick}
                 title={title}
-                className="w-6 h-6 cursor-pointer bg-transparent border-none p-0 flex items-center justify-center transition-transform duration-100 hover:scale-110"
+                className="w-6 h-6 cursor-pointer bg-transparent p-1 flex items-center justify-center hover:border-[1.5px] hover:border-gray-700 rounded-sm"
               >
                 {node}
               </button>
             ))}
           </div>
         </div>
+        {/* body */}
         <div
           ref={bodyRef}
-          className="p-5 bg-[#FFFCEB] relative"
-          style={{ height }}
+          className="relative"
+          style={{ height, backgroundColor: bodyColor, fontFamily: bodyFont }}
         >
           {childrenWithRef}
         </div>
