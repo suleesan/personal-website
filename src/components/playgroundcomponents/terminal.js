@@ -21,8 +21,8 @@ const Terminal = ({
       command: "",
       output: (
         <span style={{ color: outputColor }}>
-          Welcome to Susan's terminal. Type 'about' to learn about Susan, or
-          type 'help' for more options!
+          Hi! Type 'about' to learn more about me, or type 'help' for more
+          options!
         </span>
       ),
     },
@@ -55,76 +55,32 @@ const Terminal = ({
               and psychology at Stanford with a focus in human–computer
               interaction. I love understanding people just as much as building
               things, and I’m endlessly curious about how people think, feel,
-              learn, and create. Whether through neuroscience, design, CS,
-              writing, or music, I enjoy exploring human questions from
-              different angles. To me, technology is ultimately a people
-              problem, and I hope to use my interdisciplinary background to keep
-              tackling challenges in tech in thoughtful, human-centered ways!
+              learn, and create. Whether through neuroscience, design, CS, or
+              music, I enjoy exploring human questions from different angles. To
+              me, technology is ultimately a people problem, and I hope to use
+              my interdisciplinary background to keep tackling challenges in
+              tech in thoughtful, human-centered ways!
             </span>
             <br />
             <br />
             <span style={{ color: outputColor }}>
-              I’m a big believer in happiness as the precursor to success (and
-              it’s also important to your health), and I like to pave paths
-              toward happiness in both my work and my personal life. I’m
-              currently a software engineering intern at Netflix, where I lead
-              projects and make tools to help pave the path toward an easy,
+              I believe happiness is the precursor to success, and I like to
+              pave paths toward happiness in both my work and my personal life.
+              I’m currently a software engineering intern at Netflix, where I
+              lead projects and create tools to pave the path toward an easy,
               efficient, and happy UI engineer experience. I’m broadly
               interested in developer tooling and productivity.
             </span>
             <br />
             <br />
             <span style={{ color: outputColor }}>
-              I love creativity in all its forms: outside of work and classes, I
-              play the violin (and sometimes make covers), design and code new
-              features for this website, read, golf, lift, enjoy film
+              Outside of work and classes, I play the violin, design and code
+              new features for this website, read, golf, lift, enjoy film
               photography, occasionally blog, play Pokemon, and review
-              restaurants on Beli. I enjoy anything that keeps me curious and
+              restaurants on Beli; anything that keeps me curious, creative, and
               inspired!
             </span>
           </>
-        );
-        break;
-      case "blog":
-        output = (
-          <span style={{ color: outputColor }}>
-            I've written a lot of blog posts! Here are some of my favorites:
-            <ul className="list-disc list-inside ml-4 mt-2">
-              <li>
-                <a
-                  href="https://www.susanlee.dev/post/atla"
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{ color: outputColor, textDecoration: "underline" }}
-                >
-                  Avatar
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.susanlee.dev/post/violin"
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{ color: outputColor, textDecoration: "underline" }}
-                >
-                  Violin
-                </a>
-              </li>
-            </ul>
-          </span>
-        );
-        break;
-      case "beliefs":
-        output = (
-          <span style={{ color: outputColor }}>
-            Some things I believe strongly in:
-            <ul className="list-disc list-inside ml-4 mt-2">
-              <li>Prioritize spending time with your family and friends</li>
-              <li>Happiness is the precursor to success</li>
-              <li>Listening</li>
-              <li>Balanced life</li>
-            </ul>
-          </span>
         );
         break;
       case "violin":
@@ -142,7 +98,7 @@ const Terminal = ({
                 Tzigane, and Franck Sonata in 2025
               </li>
               <li>
-                In high school, I was a part of NYO2 in 2018 and Heifetz in
+                In high school, I was a violinist in NYO2 in 2018 and Heifetz in
                 2019!
               </li>
               <li>
@@ -169,8 +125,6 @@ const Terminal = ({
             <ul className="list-disc list-inside ml-4 mt-2">
               <li>about: Learn about me!</li>
               <li>help: Show this help message</li>
-              <li>beliefs: Read about my beliefs</li>
-              <li>blog: My favorite blog posts!</li>
               <li>violin: Some violin highlights</li>
               <li>clear: Clear the screen</li>
             </ul>
