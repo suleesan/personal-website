@@ -28,15 +28,11 @@ export default function Blog() {
           <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-primary-500">
             From the blog
           </h2>
-          <p className="mt-2 text-base sm:text-lg leading-8 pb-10">
+          <p className="mt-2 text-base sm:text-lg leading-8">
             Tidbits from my life.
           </p>
-          <p>Currently: </p>
-          <div className="pl-5">
-            <p className="pb-2">Figuring out this blog and this website</p>
-          </div>
         </div>
-        <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none">
+        <div className="mx-auto grid max-w-2xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 mt-10 sm:mt-16 lg:mx-0 lg:max-w-none">
           {posts.map((post, index) => (
             <PostCard post={post.node} key={index} />
           ))}

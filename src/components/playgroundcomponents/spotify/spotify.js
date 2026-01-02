@@ -30,7 +30,7 @@ const SpotifyTopTracks = ({
       } catch (error) {
         console.error("Error fetching top tracks:", error);
         if (isMounted) {
-          setErrorMessage("Could not load your top tracks right now.");
+          setErrorMessage("Could not load top tracks right now.");
           setStatus("error");
         }
       }

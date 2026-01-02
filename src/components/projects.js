@@ -104,9 +104,10 @@ export default function Projects() {
   return (
     <div className="flex flex-col mt-16 mx-6 sm:mx-24">
       <div className="mx-auto max-w-2xl lg:mx-0 mb-10">
-        <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-primary-500">
+        <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-primary-500 mb-4">
           Projects
         </h2>
+        <p className="mx-8 text-lg">Mostly for fun</p>
       </div>
       <div id="accordion" className="sm:mx-8">
         {projects
