@@ -6,8 +6,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/layout";
 import Intro from "./components/intro";
 import Projects from "./components/projects";
-import Blog from "./components/blog";
-import PostDetail from "./components/blogcomponents/postdetail";
 import Playground from "./components/playground";
 
 export default function App() {
@@ -17,8 +15,6 @@ export default function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Intro />} />
           <Route path="projects" element={<Projects />} />
-          <Route path="blog" element={<Blog />} />
-          <Route path="post/:slug" element={<PostDetail />} />
           <Route path="playground" element={<Playground />} />
         </Route>
       </Routes>

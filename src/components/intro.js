@@ -64,15 +64,14 @@ export default function Intro() {
             </h1>
             <p className="text-lg mt-6 font-serif sm:text-xl leading-7 text-gray-800">
               Hi! I'm Susan, and I recently graduated from Stanford with a B.S.
-              in Computer Science and a minor in Psychology. I'm finishing up my
-              M.S. in Computer Science with a focus in Human-Computer
-              Interaction.
+              and M.S. in Computer Science with a focus in Human-Computer
+              Interaction and a minor in Psychology.
             </p>
             <p className="text-lg font-serif sm:text-xl leading-7 text-gray-800">
-              I’m currently a software engineering intern at Netflix on the UI
-              Developer Experience team making UI development easy and
-              efficient, contributing to our design system and component
-              library, observability efforts, E2E/component testing, and more.
+              I’m currently a software engineer at Netflix on the UI Developer
+              Experience team making UI development easy and efficient,
+              contributing to our design system and component library,
+              observability efforts, E2E/component testing, and more.
             </p>
             <div className="flex justify-start gap-4 pt-4">
               <a
