@@ -23,7 +23,7 @@ function Draggable({
       setPosition({ x: initialX, y: initialY });
       initializedRef.current = true;
     }
-  }, []);
+  }, [initialX, initialY]);
 
   useEffect(() => {
     zIndexRef.current = zIndex;
@@ -92,7 +92,7 @@ function Draggable({
         setPosition(newPosition);
       });
     },
-    [dragging, containerRef]
+    [dragging, containerRef],
   );
 
   const handleMouseUp = () => {
